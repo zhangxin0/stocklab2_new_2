@@ -1,0 +1,42 @@
+{% extends "common/layout_user.html" %}
+{% block content %}
+<link href="{{ buildStaticUrl('/css/register.css') }}" rel="stylesheet">
+<div class="loginColumns animated fadeInDown" id="login_wrapper">
+	<div class="row">
+			<div class="ibox-content">
+				<div class="m-t login_wrap" role="form">
+                    <div class="form-group text-center">
+                        <h2 class="font-bold">STOCK LAB</h2>
+                    </div>
+					<div class="form-group" style="margin-left:25%;color:white;font-weight: bold;letter-spacing: 3px;opacity:0.89;">
+						<span>用户名:</span><input type="text" name="login_name" class="form-control login_name" placeholder="请输入用户名" style="width:75%;color:black;">
+					</div>
+					<div class="form-group" style="margin-left:25%;color:white;font-weight: bold;letter-spacing: 3px;opacity:0.89;">
+						<span>昵称:</span><input type="text" name="nick_name" class="form-control" placeholder="请输入昵称" style="width:75%;color:black;">
+					</div>
+					<div class="form-group" style="margin-left:25%;color:white;font-weight: bold;letter-spacing: 3px;opacity:0.89;">
+						<span>密码:</span><input type="password" name="login_pwd" class="form-control" placeholder="请输入密码" style="width:75%;color:black;">
+					</div>
+					<div class="form-group" style="margin-left:25%;color:white;font-weight: bold;letter-spacing: 3px;opacity:0.89;">
+						<span>确认密码:</span><input type="password" name="login_pwd2" class="form-control confirmation" placeholder="再次输入密码" style="width:75%;color:black;">
+					</div>
+					<div class="form-group" style="margin-left:25%;color:white;font-weight: bold;letter-spacing: 3px;opacity:0.89;">
+						<span>手机:</span><input type="text" name="mobile" class="form-control" placeholder="请输入手机号码" style="width:75%;color:black;">
+					</div>
+					<div class="form-group" style="margin-left:25%;color:white;font-weight: bold;letter-spacing: 3px;opacity:0.89;">
+						<span>邮箱:</span><input type="text" name="email" class="form-control" placeholder="请输入邮箱" style="width:75%;color:black;">
+					</div>
+					<div class="button-back" style="display:inline-block;width:27.5%;margin-left:25%;color:white;font-weight: bold;opacity:0.89;">
+						<a href="/user/login"><button type="button" class="btn btn-primary block full-width m-b do-back">返回</button></a>
+					</div>
+					<div class="button-submit" style="display:inline-block;color:white;width:27.5%;font-weight: bold;">
+						<button type="button" class="btn btn-primary block full-width m-b do-submit">提交</button>
+					</div>
+                </div>
+			</div>
+	</div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ buildStaticUrl('/js/user/register_submit.js') }}"></script>
+{% endblock %}

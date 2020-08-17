@@ -1,0 +1,143 @@
+线程，协程对比和Python爬虫实战说明
+https://blog.csdn.net/zhangpeterx/article/details/83419165
+
+coroutine doc：
+https://docs.python.org/3/library/asyncio-task.html#running-an-asyncio-program
+
+
+flask 处理高并发：
+https://www.jianshu.com/p/79489cfc6fb9
+
+docker:
+https://docs.docker.com/engine/reference/builder/#usage
+
+消息队列-解决并发峰值：
+https://juejin.im/post/5cb025fb5188251b0351ef48
+
+安装python 3.7
+https://www.osradar.com/install-python-3-7-on-centos-7-and-fedora-27-28/
+https://stackoverflow.com/questions/27022373/python3-importerror-no-module-named-ctypes-when-using-value-from-module-mul
+
+同花顺模拟交易接口:
+https://mp.weixin.qq.com/s?__biz=Mzg2OTA4MDY5NQ==&mid=2247485617&amp;idx=1&amp;sn=452247de8064dd25d7994cde6eef9f75&source=41#wechat_redirect
+
+
+
+<script>
+$("#selector").click(function(event){
+    $("#ul2").html("<li><span><i class='fa fa-trash' id='trash'></i></span>600010.SS</li> <li><span><i class='fa fa-trash' id='trash'></i></span>000938.SZ</li>");
+});
+ </script>
+
+
+sqlacodegen:
+pip install flask-sqlacodegen
+flask-sqlacodegen 'mysql://root:Zx1993624!@127.0.0.1/stock_ai' --tables gold_cross_result --outfile "Second_Up_Result.py"  --flask
+flask-sqlacodegen 'mysql://root:Zx1993624!@127.0.0.1/stock_ai' --tables gold_cross_result --outfile "Gold_Cross_Result.py"  --flask
+flask-sqlacodegen 'mysql://root:Zx1993624!@127.0.0.1/stock_ai' --tables nh_result --outfile "Nh_Result.py"  --flask
+flask-sqlacodegen --flask --outfile Result.py mysql+pymysql://root:Zx1993624!@sotckai.c8ut9axdtyf4.us-east-1.rds.amazonaws.com:3306/stock_ai
+
+
+write to csv
+with open('data.csv','w',newline='') as csvfile:
+for s in symbols:
+    csvfile.write(s)
+    csvfile.write("\n")
+
+
+form 表单阻止js跳转
+https://blog.csdn.net/yjz_sdau/article/details/82315591
+
+
+通过鼠标点击获取无class和id元素
+https://blog.csdn.net/wj123446/article/details/76514954
+
+
+获取实时股价的数据接口新浪
+
+缺点：历史股价数据不够完整，只能获取最近1023个数据节点。
+
+优点：速度非常快；可以获取行情图片；返回JSON，容易处理；可以获取历史的分价图数据和分时买卖交易列。
+
+返回结果：JSON实时数据，以逗号隔开相关数据，数据依次是“股票名称、今日开盘价、昨日收盘价、当前价格、今日最高价、今日最低价、竞买价、竞卖价、成交股数、成交金额、买1手、买1报价、买2手、买2报价、…、买5报价、…、卖5报价、日期、时间”。
+
+获取当前的股票行情，如http://hq.sinajs.cn/list=sh601006，注意新浪区分沪深是以sh和sz区分。
+
+聚合图床:
+https://www.superbed.cn/
+
+数据库的相关操作：
+
+链接AWS:
+mysql -h  -u root -p
+Zx..4
+https://www.percona.com/blog/2018/05/08/how-to-enable-amazon-rds-remote-access/
+数据库迁移:
+https://docs.bitnami.com/aws/how-to/migrate-database-rds/
+
+
+1 备份数据库
+mysqldump -u root -p stock_ai > backup.sql
+2 导入到AWS
+mysql -u root -p -h stockai.c8ut9axdtyf4.us-east-1.rds.amazonaws.com -D stock_ai < backup.sql
+4 https://pybit.es/deploy-flask-heroku.html
+
+把AWS数据库导入本地:
+mysqldump -h stockai.c8ut9axdtyf4.us-east-1.rds.amazonaws.com -u root -p stock_ai > backup.sql
+mysqldump -h stockai.c8ut9axdtyf4.us-east-1.rds.amazonaws.com -u root -p stock_ai --set-gtid-purged=OFF > backup.sql
+备份导入本地mysql:
+mysql -u root -p stock_ai < backup.sql
+
+sed 命令替换文件中的内容：
+https://blog.csdn.net/fengxianger/article/details/64127644
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:Zx1993624!@stockai.c8ut9axdtyf4.us-east-1.rds.amazonaws.com/stock_ai'
+
+To add a Heroku app as a Git remote, you need to execute heroku git:remote -a yourapp.
+
+Sqlcodegen 生成sqlachemy models：
+flask-sqlacodegen --flask --outfile Transaction_history.py --tables transaction_history mysql+pymysql://root:Zx1993624!@:3306/stock_ai
+flask-sqlacodegen --flask --outfile Result.py --tables result mysql+pymysql://root:Zx1993624!@:3306/stock_ai
+Ali-Cloud:
+182.92.226.104
+
+
+Mac OS 安装python：
+https://evansdianga.com/install-pip-osx/
+
+Docker build:
+
+Docker run:
+docker run -it -d -p 5000:5000 lb
+
+# REDIS 指南
+https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298
+
+https://redis-py.readthedocs.io/en/stable/
+
+Docker centos7 安装：
+https://blog.csdn.net/jason_jeson/article/details/77148526
+安装python2.7
+https://myopswork.com/install-python-2-7-10-on-centos-rhel-75f90c5239a5
+
+阿里云服务器：182.92.226.104
+db password：Z..!
+scp web/controllers/index.py root@182.92.226.104:/stocklab2_new
+scp web/controllers/index.py root@182.92.226.104:/stocklab2_new
+
+
+before name delete markpoint and mark line
+
+股票绘图参考：
+https://echarts.apache.org/examples/zh/editor.html?c=doc-example/candlestick-axisPointer
+
+rename in db 5.7:
+ALTER TABLE user_info CHANGE sale_date hold_time FLOAT;
+You can use the RENAME COLUMN in MySQL 8.0 to rename any column you need renamed.
+
+ALTER TABLE table_name RENAME COLUMN old_col_name TO new_col_name;
+
+change mysql password:
+ALTER USER `root`@`localhost` IDENTIFIED BY 'Zx1993624!', `root`@`localhost` PASSWORD EXPIRE NEVER;
+
+change column name in mysql 5.7:
+alter table user_info change sale_date hold_time float;

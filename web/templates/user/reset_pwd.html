@@ -1,0 +1,31 @@
+{% extends "common/layout_user.html" %}
+{% block content %}
+<div class="loginColumns animated fadeInDown" id="reset_wrapper">
+	<div class="row">
+			<div class="ibox-content">
+				<div class="m-t login_wrap" role="form">
+                    <div class="form-group text-center">
+                        <h2 class="font-bold">修改密码</h2>
+                    </div>
+					<div class="form-group" style="margin-left:25%;color:white">
+						<span>旧密码:</span><input type="password" name="old_password" class="form-control" placeholder="请输入旧密码" style="width:75%;color:black">
+					</div>
+					<div class="form-group" style="margin-left:25%;color:white">
+						<span>新密码:</span><input type="password" name="new_password" class="form-control new_password" placeholder="请输入新密码" style="width:75%;color:black">
+					</div>
+					<div class="form-group" style="margin-left:25%;color:white">
+						<span>确认密码:</span><input type="password" name="new_password2" class="form-control confirmation" placeholder="请再次输入新密码" style="width:75%;color:black">
+					</div>
+					<div class="button-back" style="display:inline-block;width:27.5%;margin-left:25%;color:white;font-weight: bold;opacity:0.89;">
+						<a href="/"><button type="button" class="btn btn-primary block full-width m-b do-back">返回</button></a>
+					</div>
+					<div class="button-modify" style="display:inline-block;color:white;width:27.5%;font-weight: bold;">
+						<button type="button" class="btn btn-primary block full-width m-b do-modify">修改</button>
+                </div>
+			</div>
+	</div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ buildStaticUrl('/js/user/reset_pwd.js') }}"></script>
+{% endblock %}

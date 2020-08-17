@@ -1,0 +1,135 @@
+{% include "/index/partials/header.html" %}
+<div id="guide-bar">
+    <div class="button-Edit" style="display:inline-block;">
+        <a href="user/edit">编辑资料</a>
+    </div>
+    <div class="button-Change_Password" style="display:inline-block;">
+        <a href="user/reset-pwd">修改密码</a>
+    </div>
+    <div class="button-Logout" style="display:inline-block;">
+        <a href="/user/logout">
+            <svg id="logout" class="bi bi-power" width="40px" height="40px" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 104.922.044l.5-.866a6 6 0 11-5.908-.053l.486.875z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M7.5 8V1h1v7h-1z" clip-rule="evenodd"/>
+            </svg>
+        </a>
+    </div>
+</div>
+<div class="search_wrapper" id="form_container">
+    <div class="input-group mb-3 search_input">
+        <input  class="form-control" name="stockname" type="text" placeholder="请输入股票代码, 例如: 000938" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary search" id="button-addon2" value="">搜索</button>
+        </div>
+    </div>
+    <div style="width:100%; height:20px;"></div>
+    <!--The current price-->
+    <div class="container" id="price_holder">
+        <h2 id="current_price">当前价:----</h2>
+        {% if buy_price %}
+        <h2 id="goal_price"> &nbsp;&nbsp;&nbsp;&nbsp;买入价:{{buy_price}}&nbsp;&nbsp;&nbsp;&nbsp;目标价:{{ goal_price }} </h2>
+        {% endif %}
+    </div>
+    <div  id="main" style="width:100%; height:600px;"></div>
+</div>
+<div class="api" id="{{ data0 }}" name="{{ name }}" symbol="{{symbol}}"
+     {% if buy_price %} buy_price="{{buy_price}}" {% endif %}></div>
+<!--The K data figure-->
+<!-- prepare a DOM container with width and height -->
+{% block js%}
+     <script src="{{ buildStaticUrl('/js/index/plot_figure.js') }}"></script>
+{% endblock%}
+
+
+<!--Add stock list-->
+<hr>
+
+<div class="row" id="select_list_container">
+    <div class="col-sm-4 left selectorList" id="selectorList_nh">
+        <h1 class="selector" id="nh_selector">粘合选股</h1>
+        <ul id="ul_nh">
+    <!--            {% for item in nh_result_list%}-->
+    <!--                <li id="nh_select_result"><span><i class="fa fa-plus plus-list" id="plus"></i>{{item.symbol}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>-->
+    <!--            {% endfor %}-->
+        </ul>
+    </div>
+    <div class="col-sm-4 middle selectorList" id="selectorList_gold_cross">
+        <h1 class="selector" id="gold_cross_selector">金叉选股</h1>
+        <ul id="ul_gold_cross">
+
+        </ul>
+    </div>
+    <div class="col-sm-4 right selectorList" id="selectorList_second_up">
+        <h1 class="selector" id="second_up_selector">二次反弹</h1>
+        <ul id="ul_second_up">
+
+        </ul>
+    </div>
+</div>
+
+<div class="row" id="hold_list_container">
+    <div class="col-sm-6 left hold_list" id="stockList">
+        <h1 id="p1">持股列表</h1>
+        <div class="form-inline" id="form_div" style="height:40px">
+              <span style="margin-left:5px;"> 股票 </span><input class="form-control" type="text" name="add_symbol" style="height:25px;width:20%;margin-left:5px;font-size:15px;">
+              <span style="margin-left:5px;"> 选期 </span><input class="form-control" type="text" name="add_date" style="height:25px;width:20%;margin-left:5px;font-size:15px;">
+              <span style="margin-left:5px;"> 买价 </span><input class="form-control" type="text" name="add_price" style="height:25px;width:20%;margin-left:5px;font-size:15px;">
+              <button class="btn btn-outline-secondary search" id="add_stock_button" value="" style="height:30px;width:12%;margin-left:5px;vertical-align:middle;">增加</button>
+        </div>
+        <ul id="stock_list">
+            {% for item in hold_list%}
+                <li><span><i class="fa fa-trash trash-list" id="trash"></i>股票:{{ item.hold_stock }} &nbsp;&nbsp;&nbsp; 名称:{{item.name }} &nbsp;&nbsp;&nbsp;选期:{{item.buy_date}}  &nbsp;&nbsp;买价:{{item.buy_price}}  &nbsp;&nbsp;&nbsp;&nbsp;持有:{{item.hold_time}}天</span></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="col-sm-6 right selectorList">
+        <h1 class="selector">交易策略</h1>
+        <p id="strategy_paragraph">
+            请按照提示交易策略进行交易：<br />
+            1.到达止盈位将提示盈利卖出<br />
+            2.均线死叉时将提示卖出<br />
+            3.到达止损位将提示止损<br />
+            4.持有天数到达上限将提示卖出<br />
+            5.到达清仓点将提示清仓<br />
+        </p>
+    </div>
+</div>
+
+
+<div id="history_container">
+    <table id="history_table">
+      <thead id="history_head">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col" height="40px">选股历史</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <thead id="history_name_head">
+        <tr height="40px">
+          <th scope="col">选出日期</th>
+          <th scope="col">名称</th>
+          <th scope="col">股票代码</th>
+          <th scope="col">持有天数</th>
+          <th scope="col">状态</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for item in history_list%}
+            <tr height="40px">
+                <td>{{item.date}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.symbol}}</td>
+                <td>{{item.hold_time}}</td>
+                <td>{{item.status}}</td>
+            </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+
+</div>
+<!--The k data figure-->
+{% include "/index/partials/footer.html" %}
