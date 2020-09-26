@@ -33,7 +33,7 @@ class Update():
             return
         else:
             # res 格式 [(symbol, computeIndex, cur),(symbol,.,.),...,...]
-            res = Predict.predict(0,'nh')
+            res = Predict.predict(0, 'nh')
             count = 0
             for item in res:
                 count += 1
@@ -57,7 +57,7 @@ class Update():
                     writeDb = WriteDb(sql)
                     writeDb.write()
                 except Exception as e:
-                    print('predict result write to db error!',e)
+                    print('predict result write to db error!', e)
 
     def predict_gold_cross(self):
         # 计算选股结果:
@@ -81,7 +81,7 @@ class Update():
             return
         else:
             # res 格式 [(symbol, computeIndex, cur),(symbol,.,.),...,...]
-            res = Predict.predict(0,'gold_cross')
+            res = Predict.predict(0, 'gold_cross')
             count = 0
             for item in res:
                 count += 1
@@ -105,20 +105,24 @@ class Update():
                     writeDb = WriteDb(sql)
                     writeDb.write()
                 except Exception as e:
-                    print('predict result write to db error!',e)
+                    print('predict result write to db error!', e)
 
+    def second_up_predict(self):
+        pass
 
     def update(self):
         getData.main()
 
     def main(self):
-        self.update()
         print('开始定时更新任务，每0.5小时更新数据库和选股结果.')
         scheduler = BlockingScheduler()
-        scheduler.add_job(self.predict_nh, 'interval', hours=0.5)
-        scheduler.add_job(self.predict_gold_cross, 'interval', hours=0.5)
-        scheduler.add_job(self.update, 'interval', hours=0.5)
-        scheduler.start()
+        scheduler.add_job(self.predict_nh, 'cron', hour=19, minute=0)
+        scheduler.add_job(self.predict_gold_cross, 'cron', hour=19, minute=0)
+        scheduler.add_job(self.update, 'cron', hour=18, minute=0)
+        try:
+            scheduler.start()
+        except Exception as e:
+            print(e)
 
 
 if __name__ == '__main__':
