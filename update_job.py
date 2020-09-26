@@ -11,16 +11,15 @@ import web.controllers.compute.GetData as getData
 
 class Update():
     # nh_result, gold_cross_result
-    def predict_nh(self):
+    def predict_base(self, table, option):
         # 计算选股结果:
-        table = 'nh_result'
         readDb = ReadDb(f'select * from {table} order by {table}.date desc limit 1')
         get_res = readDb.read()
         if not get_res:
             result_date = '19930624'
         else:
-            # id | symbol    | date     | price
-            result_date = readDb.read()[0][2]
+            # id | symbol | name   | date     | price
+            result_date = readDb.read()[0][3]
         # 更改date = 数据库里最新的日期，如果数据库更新，要执行选股操作
         readCursor = ReadCursor()
         db_date = ('').join(readCursor.read().split('-'))
@@ -29,11 +28,11 @@ class Update():
         prices = []
         names = []
         if result_date and result_date >= db_date:
-            print('粘合选股已更新！')
+            print(f'{option}选股结果已更新！')
             return
         else:
             # res 格式 [(symbol, computeIndex, cur),(symbol,.,.),...,...]
-            res = Predict.predict(0, 'nh')
+            res = Predict.predict(0, option)
             count = 0
             for item in res:
                 count += 1
@@ -58,67 +57,34 @@ class Update():
                     writeDb.write()
                 except Exception as e:
                     print('predict result write to db error!', e)
+
+    def predict_nh(self):
+        # 计算选股结果:
+        table = 'nh_result'
+        option = 'nh'
+        self.predict_base(table,option)
 
     def predict_gold_cross(self):
         # 计算选股结果:
         table = 'gold_cross_result'
-        readDb = ReadDb(f'select * from {table} order by {table}.date desc limit 1')
-        get_res = readDb.read()
-        if not get_res:
-            result_date = '19930624'
-        else:
-            # id | symbol    | date     | price
-            result_date = readDb.read()[0][2]
-        # 更改date = 数据库里最新的日期，如果数据库更新，要执行选股操作
-        readCursor = ReadCursor()
-        db_date = ('').join(readCursor.read().split('-'))
-        dates = []
-        symbols = []
-        prices = []
-        names = []
-        if result_date and result_date >= db_date:
-            print('金叉选股已更新！')
-            return
-        else:
-            # res 格式 [(symbol, computeIndex, cur),(symbol,.,.),...,...]
-            res = Predict.predict(0, 'gold_cross')
-            count = 0
-            for item in res:
-                count += 1
-                # 设定发送上限为7个选出股：
-                if count > 7:
-                    break
-                names.append(ReadDb(f"select * from stock_info where symbol='{item[0]}' limit 1").read()[0][3])
-                dates.append(('').join(item[1].trade_date[0].split('-')))
-                symbols.append(item[0])
-                # 买入价格按照单日收盘价计算
-                prices.append(item[1].close[0])
-            ## 添加至选股数据库：
-            for i in range(len(symbols)):
-                date = dates[i]
-                symbol = symbols[i]
-                price = prices[i]
-                name = names[i]
-                try:
-                    # 写入数据库:
-                    sql = f"insert into {table} (symbol,name,date,price) values ('{symbol}','{name}','{date}',{price})"
-                    writeDb = WriteDb(sql)
-                    writeDb.write()
-                except Exception as e:
-                    print('predict result write to db error!', e)
+        option = 'gold_cross'
+        self.predict_base(table, option)
 
-    def second_up_predict(self):
-        pass
+    def predict_second_up(self):
+        # 计算选股结果:
+        table = 'second_up_result'
+        option = 'second_up'
+        self.predict_base(table, option)
 
     def update(self):
         getData.main()
 
     def main(self):
-        print('开始定时更新任务，每0.5小时更新数据库和选股结果.')
+        print('开始定时更新任务，每天18点更新数据库和19点更新选股结果.')
         scheduler = BlockingScheduler()
-        scheduler.add_job(self.predict_nh, 'cron', hour=19, minute=0)
-        scheduler.add_job(self.predict_gold_cross, 'cron', hour=19, minute=0)
         scheduler.add_job(self.update, 'cron', hour=18, minute=0)
+        scheduler.add_job(self.predict_nh, 'cron', hour=18, minute=30)
+        scheduler.add_job(self.predict_gold_cross, 'cron', hour=18, minute=30)
         try:
             scheduler.start()
         except Exception as e:

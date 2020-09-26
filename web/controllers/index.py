@@ -775,3 +775,4 @@ def refresh_stocklist():
                 item.buy_date + " &nbsp;&nbsp;&nbsp;买价:" + str(item.buy_price) + " &nbsp;&nbsp;&nbsp;持有:" + str(
             item.hold_time) + "天</span></li>"
     return html
+

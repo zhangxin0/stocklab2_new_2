@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="67596828-4dfe-4e98-8853-512fe8822ab6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nohup.out" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/update_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/update_job.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/controllers/compute/Predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/compute/Predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/controllers/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/index.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,57 +16,175 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/controllers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3212">
-              <caret line="225" column="27" lean-forward="true" selection-start-line="225" selection-start-column="27" selection-end-line="225" selection-end-column="27" />
+            <state relative-caret-position="-1964">
+              <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+              <folding>
+                <element signature="e#2384#2433#0" />
+                <element signature="e#2542#2546#0" />
+                <element signature="e#3145#3340#0" />
+                <element signature="e#3416#3780#0" />
+                <element signature="e#3504#3691#0" />
+                <element signature="e#3735#3780#0" />
+                <element signature="e#3922#4755#0" />
+                <element signature="e#3971#4307#0" />
+                <element signature="e#4367#4755#0" />
+                <element signature="e#4817#5871#0" />
+                <element signature="e#4874#5310#0" />
+                <element signature="e#5378#5871#0" />
+                <element signature="e#5932#6965#0" />
+                <element signature="e#5988#6415#0" />
+                <element signature="e#6482#6965#0" />
+                <element signature="e#7162#7219#0" />
+                <element signature="e#7974#8008#0" />
+                <element signature="e#8043#8318#1" />
+                <element signature="e#8375#11918#0" />
+                <element signature="e#8579#8717#0" />
+                <element signature="e#8943#9536#0" />
+                <element signature="e#9019#9536#0" />
+                <element signature="e#9090#9149#0" />
+                <element signature="e#9222#9386#0" />
+                <element signature="e#9579#10858#0" />
+                <element signature="e#9733#10123#0" />
+                <element signature="e#10194#10521#0" />
+                <element signature="e#10393#10451#0" />
+                <element signature="e#10589#10858#0" />
+                <element signature="e#10730#10788#0" />
+                <element signature="e#11157#11766#0" />
+                <element signature="e#11192#11444#0" />
+                <element signature="e#11490#11766#0" />
+                <element signature="e#11921#12184#1" />
+                <element signature="e#12257#15897#0" />
+                <element signature="e#12475#12634#0" />
+                <element signature="e#12901#13468#0" />
+                <element signature="e#12945#13004#0" />
+                <element signature="e#13071#13468#0" />
+                <element signature="e#13178#13318#0" />
+                <element signature="e#13511#14813#0" />
+                <element signature="e#13673#14063#0" />
+                <element signature="e#14134#14468#0" />
+                <element signature="e#14340#14398#0" />
+                <element signature="e#14536#14813#0" />
+                <element signature="e#14685#14743#0" />
+                <element signature="e#15112#15737#0" />
+                <element signature="e#15147#15407#0" />
+                <element signature="e#15453#15737#0" />
+                <element signature="e#15970#19601#0" />
+                <element signature="e#16186#16342#0" />
+                <element signature="e#16609#17178#0" />
+                <element signature="e#16685#17178#0" />
+                <element signature="e#16756#16815#0" />
+                <element signature="e#16888#17028#0" />
+                <element signature="e#17221#18520#0" />
+                <element signature="e#17382#17772#0" />
+                <element signature="e#17843#18176#0" />
+                <element signature="e#18048#18106#0" />
+                <element signature="e#18244#18520#0" />
+                <element signature="e#18392#18450#0" />
+                <element signature="e#18819#19442#0" />
+                <element signature="e#18854#19113#0" />
+                <element signature="e#19159#19442#0" />
+                <element signature="e#19689#20857#0" />
+                <element signature="e#20128#20832#0" />
+                <element signature="e#20523#20726#0" />
+                <element signature="e#20937#22323#0" />
+                <element signature="e#21213#21248#0" />
+                <element signature="e#21476#22029#0" />
+                <element signature="e#21769#22029#0" />
+                <element signature="e#22141#22189#0" />
+                <element signature="e#22429#23487#0" />
+                <element signature="e#22937#23407#0" />
+                <element signature="e#23293#23345#0" />
+                <element signature="e#23573#23978#0" />
+                <element signature="e#24858#29064#0" />
+                <element signature="e#25225#29039#0" />
+                <element signature="e#26096#26168#0" />
+                <element signature="e#26177#26251#0" />
+                <element signature="e#26436#26481#0" />
+                <element signature="e#26490#26520#0" />
+                <element signature="e#27181#27396#0" />
+                <element signature="e#27456#27670#0" />
+                <element signature="e#27751#28073#0" />
+                <element signature="e#28172#28381#0" />
+                <element signature="e#28408#28444#0" />
+                <element signature="e#28474#28930#0" />
+                <element signature="e#28723#28930#0" />
+                <element signature="e#28777#28852#0" />
+                <element signature="e#28939#28947#0" />
+                <element signature="e#29111#29164#0" />
+                <element signature="e#29242#29871#0" />
+                <element signature="e#29576#29855#0" />
+                <element signature="e#29903#30865#0" />
+                <element signature="e#30131#30495#0" />
+                <element signature="e#30219#30406#0" />
+                <element signature="e#30450#30495#0" />
+                <element signature="e#30531#30849#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/controllers/compute/Predict.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/controllers/compute/ComputeIndex.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="469" column="31" selection-start-line="469" selection-start-column="29" selection-end-line="469" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/update_job.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
+            <state relative-caret-position="339">
+              <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
+              <folding>
+                <element signature="e#51#112#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www.py">
+        <entry file="file://$PROJECT_DIR$/web/controllers/compute/common/WriteDb.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controllers/compute/common/ReadDb.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controllers/compute/BackPrediction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-64" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controllers/compute/GetData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="156" column="37" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controllers/compute/MockTransaction.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/web/controllers/compute/Predict_Gene.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controllers/jobs/update.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -74,6 +195,13 @@
       <find>html</find>
       <find>nh_predict</find>
       <find>nh</find>
+      <find>write_all</find>
+      <find>before_request</find>
+      <find>update</find>
+      <find>3</find>
+      <find>result_date</find>
+      <find>option</find>
+      <find>predict_second_up</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -86,9 +214,10 @@
         <option value="$PROJECT_DIR$/manager.py" />
         <option value="$PROJECT_DIR$/config/local_setting.py" />
         <option value="$PROJECT_DIR$/web/static/js/index/selector.js" />
-        <option value="$PROJECT_DIR$/web/controllers/index.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/web/controllers/index.py" />
+        <option value="$PROJECT_DIR$/web/controllers/compute/Predict.py" />
         <option value="$PROJECT_DIR$/update_job.py" />
       </list>
     </option>
@@ -101,10 +230,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="23" />
-    <option name="y" value="29" />
+    <option name="x" value="100" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="835" />
+    <option name="height" value="833" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -122,7 +251,7 @@
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
@@ -141,6 +270,20 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
               <item name="compute" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="compute" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="interceptors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -180,7 +323,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.manager">
+  <component name="RunManager" selected="Python.update_job">
     <configuration name="manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="stocklab2_new_2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -231,9 +374,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.manager" />
-        <item itemvalue="Python.manager" />
         <item itemvalue="Python.update_job" />
+        <item itemvalue="Python.manager" />
+        <item itemvalue="Python.manager" />
       </list>
     </recent_temporary>
   </component>
@@ -252,31 +395,32 @@
       <workItem from="1597248723270" duration="1502000" />
       <workItem from="1597655283327" duration="2135000" />
       <workItem from="1597669989802" duration="1421000" />
+      <workItem from="1601096681478" duration="5261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22733000" />
+    <option name="totallyTimeSpent" value="27994000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="302" y="92" width="1440" height="833" extended-state="0" />
+    <frame x="100" y="23" width="1440" height="833" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19599427" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21244635" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32952183" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39915967" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4178273" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38942978" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="File Transfer" order="9" sideWeight="0.49963045" visible="true" weight="0.14345405" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49963045" weight="0.14305556" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.30252102" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.36768803" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50036955" side_tool="true" weight="0.3488095" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.2642225" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -290,8 +434,19 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/stocklab2_new_2$update_job.coverage" NAME="update_job Coverage Results" MODIFIED="1595075614976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stocklab2_new_2$update_job.coverage" NAME="update_job Coverage Results" MODIFIED="1601101417242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stocklab2_new_2$manager.coverage" NAME="manager Coverage Results" MODIFIED="1597656820627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
@@ -377,12 +532,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="152">
           <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -390,31 +542,197 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/update_job.py">
+    <entry file="file://$PROJECT_DIR$/www.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/flask/globals.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="109" column="25" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
+        <state relative-caret-position="344">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/apscheduler/schedulers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="392" column="81" selection-start-line="392" selection-start-column="77" selection-end-line="392" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/interceptors/AuthInterceptor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/compute/BackPrediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/compute/GetData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="156" column="37" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/compute/MockTransaction.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/compute/Predict_Gene.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/jobs/update.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/compute/common/WriteDb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/compute/common/ReadDb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/controllers/compute/ComputeIndex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="469" column="31" selection-start-line="469" selection-start-column="29" selection-end-line="469" selection-end-column="31" />
+        <state relative-caret-position="113">
+          <caret line="465" column="22" selection-start-line="465" selection-start-column="16" selection-end-line="465" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/controllers/compute/Predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        <state relative-caret-position="144">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/controllers/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3212">
-          <caret line="225" column="27" lean-forward="true" selection-start-line="225" selection-start-column="27" selection-end-line="225" selection-end-column="27" />
+        <state relative-caret-position="-1964">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+          <folding>
+            <element signature="e#2384#2433#0" />
+            <element signature="e#2542#2546#0" />
+            <element signature="e#3145#3340#0" />
+            <element signature="e#3416#3780#0" />
+            <element signature="e#3504#3691#0" />
+            <element signature="e#3735#3780#0" />
+            <element signature="e#3922#4755#0" />
+            <element signature="e#3971#4307#0" />
+            <element signature="e#4367#4755#0" />
+            <element signature="e#4817#5871#0" />
+            <element signature="e#4874#5310#0" />
+            <element signature="e#5378#5871#0" />
+            <element signature="e#5932#6965#0" />
+            <element signature="e#5988#6415#0" />
+            <element signature="e#6482#6965#0" />
+            <element signature="e#7162#7219#0" />
+            <element signature="e#7974#8008#0" />
+            <element signature="e#8043#8318#1" />
+            <element signature="e#8375#11918#0" />
+            <element signature="e#8579#8717#0" />
+            <element signature="e#8943#9536#0" />
+            <element signature="e#9019#9536#0" />
+            <element signature="e#9090#9149#0" />
+            <element signature="e#9222#9386#0" />
+            <element signature="e#9579#10858#0" />
+            <element signature="e#9733#10123#0" />
+            <element signature="e#10194#10521#0" />
+            <element signature="e#10393#10451#0" />
+            <element signature="e#10589#10858#0" />
+            <element signature="e#10730#10788#0" />
+            <element signature="e#11157#11766#0" />
+            <element signature="e#11192#11444#0" />
+            <element signature="e#11490#11766#0" />
+            <element signature="e#11921#12184#1" />
+            <element signature="e#12257#15897#0" />
+            <element signature="e#12475#12634#0" />
+            <element signature="e#12901#13468#0" />
+            <element signature="e#12945#13004#0" />
+            <element signature="e#13071#13468#0" />
+            <element signature="e#13178#13318#0" />
+            <element signature="e#13511#14813#0" />
+            <element signature="e#13673#14063#0" />
+            <element signature="e#14134#14468#0" />
+            <element signature="e#14340#14398#0" />
+            <element signature="e#14536#14813#0" />
+            <element signature="e#14685#14743#0" />
+            <element signature="e#15112#15737#0" />
+            <element signature="e#15147#15407#0" />
+            <element signature="e#15453#15737#0" />
+            <element signature="e#15970#19601#0" />
+            <element signature="e#16186#16342#0" />
+            <element signature="e#16609#17178#0" />
+            <element signature="e#16685#17178#0" />
+            <element signature="e#16756#16815#0" />
+            <element signature="e#16888#17028#0" />
+            <element signature="e#17221#18520#0" />
+            <element signature="e#17382#17772#0" />
+            <element signature="e#17843#18176#0" />
+            <element signature="e#18048#18106#0" />
+            <element signature="e#18244#18520#0" />
+            <element signature="e#18392#18450#0" />
+            <element signature="e#18819#19442#0" />
+            <element signature="e#18854#19113#0" />
+            <element signature="e#19159#19442#0" />
+            <element signature="e#19689#20857#0" />
+            <element signature="e#20128#20832#0" />
+            <element signature="e#20523#20726#0" />
+            <element signature="e#20937#22323#0" />
+            <element signature="e#21213#21248#0" />
+            <element signature="e#21476#22029#0" />
+            <element signature="e#21769#22029#0" />
+            <element signature="e#22141#22189#0" />
+            <element signature="e#22429#23487#0" />
+            <element signature="e#22937#23407#0" />
+            <element signature="e#23293#23345#0" />
+            <element signature="e#23573#23978#0" />
+            <element signature="e#24858#29064#0" />
+            <element signature="e#25225#29039#0" />
+            <element signature="e#26096#26168#0" />
+            <element signature="e#26177#26251#0" />
+            <element signature="e#26436#26481#0" />
+            <element signature="e#26490#26520#0" />
+            <element signature="e#27181#27396#0" />
+            <element signature="e#27456#27670#0" />
+            <element signature="e#27751#28073#0" />
+            <element signature="e#28172#28381#0" />
+            <element signature="e#28408#28444#0" />
+            <element signature="e#28474#28930#0" />
+            <element signature="e#28723#28930#0" />
+            <element signature="e#28777#28852#0" />
+            <element signature="e#28939#28947#0" />
+            <element signature="e#29111#29164#0" />
+            <element signature="e#29242#29871#0" />
+            <element signature="e#29576#29855#0" />
+            <element signature="e#29903#30865#0" />
+            <element signature="e#30131#30495#0" />
+            <element signature="e#30219#30406#0" />
+            <element signature="e#30450#30495#0" />
+            <element signature="e#30531#30849#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_job.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
+          <folding>
+            <element signature="e#51#112#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

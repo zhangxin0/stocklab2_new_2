@@ -30,9 +30,6 @@ def predict(cur,option):
             # res.sort(key=lambda x: (x[1].mv(20) - x[1].mv(5)))
             # 修改后：
             res.sort(key=lambda x: -(x[1].mv(20) - x[1].mv(5)))
-            # print best result
-            #print(res[-1])
-            #res = res[-1]
             print(res[0])
         # 返回结果列表
         return res
