@@ -135,9 +135,9 @@ var common_ops = {
         layer.tips( msg, target, {
             tips: [ 3, '#e5004f']
         });
-        $('html, body').animate({
-            scrollTop: target.offset().top - 10
-        }, 100);
+        // $('html, body').animate({
+        //     scrollTop: target.offset().top - 10
+        // }, 100);
     },
     // url management:
     buildUrl:function(path, params){

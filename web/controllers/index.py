@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 from flask import Blueprint, render_template, g, request, make_response, jsonify
 from common.libs.Helper import ops_render, iPagination
 from flask import Blueprint
@@ -133,9 +134,9 @@ def index():
                                   i].date + "</span></li>"
 
     resp_data = {}
-    resp_data['html_nh'] = html_nh
-    resp_data['html_gold_cross'] = html_gold_cross
-    resp_data['html_second_up'] = html_second_up
+    resp_data['html_nh'] = html_nh if html_nh else "<li id='nh_select_result'><span><i class='fa fa-plus plus-list' id='plus'></i>今天没有符合条件的股票哦～～</span></li>"
+    resp_data['html_gold_cross'] = html_gold_cross if html_gold_cross else "<li id='nh_select_result'><span>今天没有符合条件的股票哦～～</span></li>"
+    resp_data['html_second_up'] = html_second_up if html_second_up else "<li id='nh_select_result'><span>今天没有符合条件的股票哦～～</span></li>"
     if request.method == 'POST':
         resp_data['code'] = 200
         return jsonify(resp_data)
@@ -147,11 +148,12 @@ def index():
     resp_data['history_list'] = history_list
     # resp_data['pages'] = pages
     find_obj = UserInfo.query.filter(UserInfo.user_id == g.current_user.uid, UserInfo.hold_stock == symbol).first()
-    sale_point = 0.04
+    user_info = UserInfo.query.filter_by(user_id=g.current_user.uid).first()
+    sale_point = user_info.sale_point
     if find_obj:
         resp_data['buy_price'] = round(find_obj.buy_price, 2)
         # sale_point = calculate_goal_price(global_dict[g.current_user.uid]['symbol'])+1
-        resp_data['goal_price'] = round(find_obj.buy_price * 1.04, 2)
+        resp_data['goal_price'] = round(find_obj.buy_price * (100+sale_point)/100, 2)
     return ops_render("index/index.html", resp_data)
 
 
@@ -585,6 +587,24 @@ def user_defined_add_list():
     resp['data'] = html
     return jsonify(resp)
 
+@route_index.route('/user_defined_set_sale_point', methods=['GET', 'POST'])
+def user_defined_set_sale_point():
+    req = request.values
+    resp = {'code': 200, 'msg': 'success', 'data': ''}
+    try:
+        sale_point = float(req['sale_point'])
+    except Exception as e:
+        app.logger.info(e)
+        resp['code'] = -1
+        return jsonify(resp)
+    user_infos = UserInfo.query.filter_by(user_id=g.current_user.uid).all()
+    for user_info in user_infos:
+        user_info.sale_point = sale_point
+    db.session.commit()
+    return jsonify(resp)
+
+
+
 
 @route_index.route('/delete_list', methods=['GET', 'POST'])
 def delete_list():
@@ -637,7 +657,8 @@ def get_strategy():
         # 用来判断是否需要写入历史数据库
         flag = True
         # 每一只股充值sale_point，否则延续上一次修改的sale_point
-        sale_point = 4
+        user_info = UserInfo.query.filter_by(user_id=g.current_user.uid).first()
+        sale_point = user_info.sale_point
         symbol = element.hold_stock
         if symbol[-1] == 'Z':
             symbol_url = 'sz' + symbol[0:6]

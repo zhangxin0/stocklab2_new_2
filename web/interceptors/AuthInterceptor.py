@@ -20,6 +20,7 @@ def before_request():
     g.current_user = None
     if user_info:
         g.current_user = user_info
+        g.sale_point = 4
     pattern = re.compile('%s' % '|'.join(ignore_urls))
     if pattern.match(path):
         return

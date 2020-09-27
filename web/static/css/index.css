@@ -53,6 +53,11 @@ h1{
     font-size: 18px;
 }
 
+#sale_point{
+    display:inline-block;
+    font-size: 18px;
+}
+
 .form-control{
 }
 

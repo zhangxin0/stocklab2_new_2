@@ -16,6 +16,7 @@ class UserInfo(db.Model):
     user_id = db.Column(db.ForeignKey('user.uid'), nullable=False, server_default=db.FetchedValue(), info='用户id fk')
     buy_price = db.Column(db.Float, nullable=False, server_default=db.FetchedValue(), info='卖出价格')
     sold_price = db.Column(db.Float, info='卖出价格')
+    sale_point = db.Column(db.Float, info='卖点')
     strategy = db.Column(db.String(2000), info='当前交易策略')
     buy_date = db.Column(db.String(20), info='买入日期')
     hold_time = db.Column(db.Float, info='卖出日期')
