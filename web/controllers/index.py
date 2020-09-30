@@ -23,12 +23,14 @@ import web.controllers.compute.common.route_methods as route_methods
 from web.controllers.jobs.update import Update
 from web.controllers.notification.notify import Message
 from service.business.view_utils import ViewUtils
+from web.base.view import restful
 
 route_index = Blueprint('index_page', __name__)
 global_dict = {'uid': {'symbol': '', 'hold_stock': []}}
 
 
 @route_index.route("/", methods=["GET", "POST"])
+@restful
 def index():
     hold_list = UserInfo.query.filter_by(user_id=g.current_user.uid).order_by(UserInfo.buy_date).all()
     if g.current_user.uid in global_dict:
@@ -158,6 +160,7 @@ def index():
 
 
 @route_index.route('/update')
+@restful
 def update():
     getData.main()
     return '数据更新完成'
@@ -180,6 +183,7 @@ Raises：
     写入数据库异常
 """
 @route_index.route('/nh_predict')
+@restful
 def nh_predict():
     data = {}
     resp = {'code': 200, 'msg': 'success', 'data': {}}
@@ -290,6 +294,7 @@ Raises：
     写入数据库异常
 """
 @route_index.route('/gold_cross_predict')
+@restful
 def gold_cross_predict():
     data = {}
     resp = {'code': 200, 'msg': 'success', 'data': {}}
@@ -385,6 +390,7 @@ def gold_cross_predict():
 
 
 @route_index.route('/second_up_predict')
+@restful
 def second_up_predict():
     data = {}
     resp = {'code': 200, 'msg': 'success', 'data': {}}
@@ -481,6 +487,7 @@ def second_up_predict():
 
 # 为搜索提供数据接口
 @route_index.route('/search', methods=['GET', 'POST'])
+@restful
 def search():
     resp = {'code': 200, 'msg': 'success', 'data0': {}}
     req = request.values
@@ -516,6 +523,7 @@ def search():
 
 
 @route_index.route('/add_list', methods=['GET', 'POST'])
+@restful
 def add_list():
     req = request.values
     symbol = req['symbol']
@@ -550,6 +558,7 @@ def add_list():
 
 
 @route_index.route('/user_defined_add_list', methods=['GET', 'POST'])
+@restful
 def user_defined_add_list():
     req = request.values
     symbol = req['symbol']
@@ -588,6 +597,7 @@ def user_defined_add_list():
     return jsonify(resp)
 
 @route_index.route('/user_defined_set_sale_point', methods=['GET', 'POST'])
+@restful
 def user_defined_set_sale_point():
     req = request.values
     resp = {'code': 200, 'msg': 'success', 'data': ''}
@@ -607,6 +617,7 @@ def user_defined_set_sale_point():
 
 
 @route_index.route('/delete_list', methods=['GET', 'POST'])
+@restful
 def delete_list():
     resp = {'code': 200, 'msg': 'success', 'data': {}}
     req = request.values
@@ -621,6 +632,7 @@ def delete_list():
 
 
 @route_index.route('/get_price', methods=['GET', 'POST'])
+@restful
 def get_price():
     resp = {'code': 200, 'msg': 'success', 'data': {}}
     req = ''
@@ -645,6 +657,7 @@ def get_price():
 
 
 @route_index.route('/get_strategy', methods=['GET', 'POST'])
+@restful
 def get_strategy():
     # 对于所有的持股列表，检测是否到达卖出点
     hold_list = UserInfo.query.filter_by(user_id=g.current_user.uid).all()
@@ -750,6 +763,7 @@ def get_strategy():
 
 
 @route_index.route('/jobs')
+@restful
 def jobs():
     update = Update()
     update.main()
@@ -757,6 +771,7 @@ def jobs():
 
 
 @route_index.route('/message', methods=['GET', 'POST'])
+@restful
 def message():
     resp = {'code': 200, 'msg': 'success', 'data': {}}
     req = request.values
