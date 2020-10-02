@@ -14,7 +14,7 @@ from web.controllers.compute.common.ReadCursor import ReadCursor
 import datetime
 import web.controllers.compute.GetData as getData
 import web.controllers.compute.Predict as Predict
-from application import app, db, redis_client
+from application import app, db
 from common.models.UserInfo import UserInfo
 from common.models.Notify import Notify
 from web.controllers.compute.common.ComputeIndex import ComputeIndex
@@ -24,139 +24,17 @@ from web.controllers.jobs.update import Update
 from web.controllers.notification.notify import Message
 from service.business.view_utils import ViewUtils
 from web.base.view import restful
+from service.business.gen_index_data import GenIndexDataService
 
 route_index = Blueprint('index_page', __name__)
-global_dict = {'uid': {'symbol': '', 'hold_stock': []}}
 
 
 @route_index.route("/", methods=["GET", "POST"])
 @restful
 def index():
-    hold_list = UserInfo.query.filter_by(user_id=g.current_user.uid).order_by(UserInfo.buy_date).all()
-    if g.current_user.uid in global_dict:
-        symbol = global_dict[g.current_user.uid]['symbol']
-    else:
-        global_dict[g.current_user.uid] = {}
-        # 如果symbol为空，从持股列表中读取，再为空，设定为default
-        if not hold_list:
-            symbol = '000938.SZ'
-        else:
-            symbol = hold_list[-1].hold_stock
-    # 将空的global-symbol赋值，这样get_price就可以获取到当下symbol的值:
-    global_dict[g.current_user.uid]['symbol'] = symbol
-    readCursor = ReadCursor()
-    db_date = ('').join(readCursor.read().split('-'))
-    history_list = TransactionHistory.query.filter_by(uid=g.current_user.uid).order_by(TransactionHistory.date).all()
-    nh_result_list = []
-    gold_cross_result_list = []
-    second_up_result_list = []
-    try:
-        nh_result_list = NhResult.query.filter_by(date=db_date).all()
-        gold_cross_result_list = GoldCrossResult.query.filter_by(date=db_date).all()
-        second_up_result_list = SecondUpResult.query.filter_by(date=db_date).all()
-    except Exception as e:
-        app.logger.error(e)
-        db.session.rollback()
-    data = StockInfo.query.filter_by(symbol=symbol).order_by(StockInfo.trade_date).all()
-    data0 = []
-    # 分页
-    # req = request.values  # in url path after ?
-    # page = int(req['p']) if ('p' in req and req['p']) else 1
-    # page_params = {
-    #     'total':history_list.count(),
-    #     'page_size': app.config['PAGE_SIZE'],
-    #     'page': page,
-    #     'display': app.config['PAGE_DISPLAY'],
-    #     'url': request.full_path.replace("&p={}".format(page), "")
-    # }
-    # pages = iPagination(page_params)
-    # offset = (page - 1) * (app.config['PAGE_SIZE'])
-    # limit = app.config['PAGE_SIZE'] * page
-    # history_list = history_list.all()[offset:limit]
-    for element in data:
-        # 数据意义：trade_date,开盘(open)，收盘(close)，最低(lowest)，最高(highest)
-        values = [element.trade_date, element.open, element.close, element.low, element.high, element.vol]
-        data0.append(values)
-    # 计算股票持有时间，并添加到user_info.hold_time:
-    for item in hold_list:
-        stock_info = ComputeIndex(item.hold_stock, 0)
-        # 买入当天为0
-        try:
-            buy_date = item.buy_date[0:4] + '-' + item.buy_date[4:6] + '-' + item.buy_date[6:]
-            hold_time = stock_info.trade_date.index(buy_date) - 1
-            item.hold_time = hold_time
-        except Exception as e:
-            app.logger.error(e)
-            hold_time = 0
-    # 生成selector的html:
-    html_nh = ''
-    html_gold_cross = ''
-    html_second_up = ''
-    for i in range(0, len(nh_result_list)):
-        if len(nh_result_list[i].name) == 4:
-            html_nh += "<li id='nh_select_result'><span><i class='fa fa-plus plus-list' id='plus'></i>" + \
-                       nh_result_list[
-                           i].symbol + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + nh_result_list[
-                           i].name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + nh_result_list[i].date + "</span></li>"
-        elif len(nh_result_list[i].name) == 3:
-            html_nh += "<li id='nh_select_result'><span><i class='fa fa-plus plus-list' id='plus'></i>" + \
-                       nh_result_list[
-                           i].symbol + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + nh_result_list[
-                           i].name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + nh_result_list[
-                           i].date + "</span></li>"
-
-    for i in range(0, len(gold_cross_result_list)):
-        if len(gold_cross_result_list[i].name) == 4:
-            html_gold_cross += "<li id='gold_cross_select_result'><span><i class='fa fa-plus plus-list' id='plus'></i>" + \
-                               gold_cross_result_list[
-                                   i].symbol + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + gold_cross_result_list[
-                                   i].name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + gold_cross_result_list[
-                                   i].date + "</span></li>"
-        elif len(gold_cross_result_list[i].name) == 3:
-            html_gold_cross += "<li id='gold_cross_select_result'><span><i class='fa fa-plus plus-list' id='plus'></i>" + \
-                               gold_cross_result_list[
-                                   i].symbol + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + gold_cross_result_list[
-                                   i].name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + \
-                               gold_cross_result_list[
-                                   i].date + "</span></li>"
-
-    for i in range(0, len(second_up_result_list)):
-        if len(second_up_result_list[i].name) == 4:
-            html_second_up += "<li id='second_up_select_result'><span><i class='fa fa-plus plus-list' id='plus'></i>" + \
-                              second_up_result_list[
-                                  i].symbol + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + second_up_result_list[
-                                  i].name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + second_up_result_list[
-                                  i].date + "</span></li>"
-        elif len(second_up_result_list[i].name) == 3:
-            html_second_up += "<li id='second_up_select_result'><span><i class='fa fa-plus plus-list' id='plus'></i>" + \
-                              second_up_result_list[
-                                  i].symbol + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + second_up_result_list[
-                                  i].name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + \
-                              second_up_result_list[
-                                  i].date + "</span></li>"
-
-    resp_data = {}
-    resp_data['html_nh'] = html_nh if html_nh else "<li id='nh_select_result'><span><i class='fa fa-plus plus-list' id='plus'></i>今天没有符合条件的股票哦～～</span></li>"
-    resp_data['html_gold_cross'] = html_gold_cross if html_gold_cross else "<li id='nh_select_result'><span>今天没有符合条件的股票哦～～</span></li>"
-    resp_data['html_second_up'] = html_second_up if html_second_up else "<li id='nh_select_result'><span>今天没有符合条件的股票哦～～</span></li>"
-    if request.method == 'POST':
-        resp_data['code'] = 200
-        return jsonify(resp_data)
-    resp_data['data0'] = data0
-    resp_data['name'] = data[0].name
-    resp_data['symbol'] = data[0].symbol
-    resp_data['hold_list'] = hold_list
-    resp_data['nh_result_list'] = nh_result_list
-    resp_data['history_list'] = history_list
-    # resp_data['pages'] = pages
-    find_obj = UserInfo.query.filter(UserInfo.user_id == g.current_user.uid, UserInfo.hold_stock == symbol).first()
-    user_info = UserInfo.query.filter_by(user_id=g.current_user.uid).first()
-    sale_point = user_info.sale_point
-    if find_obj:
-        resp_data['buy_price'] = round(find_obj.buy_price, 2)
-        # sale_point = calculate_goal_price(global_dict[g.current_user.uid]['symbol'])+1
-        resp_data['goal_price'] = round(find_obj.buy_price * (100+sale_point)/100, 2)
-    return ops_render("index/index.html", resp_data)
+    resp_data = GenIndexDataService.get_resp_data()
+    response = make_response(ops_render("index/index.html", resp_data))
+    return response
 
 
 @route_index.route('/update')
@@ -509,7 +387,7 @@ def search():
         find_obj = UserInfo.query.filter(UserInfo.user_id == g.current_user.uid, UserInfo.hold_stock == symbol).first()
         if find_obj:
             resp['buy_price'] = find_obj.buy_price
-        global_dict[g.current_user.uid]['symbol'] = symbol
+        g.uid['symbol'] = symbol
         # 制作数据接口:
         data = StockInfo.query.filter_by(symbol=symbol).order_by(StockInfo.trade_date).all()
         for element in data:
@@ -636,8 +514,8 @@ def delete_list():
 def get_price():
     resp = {'code': 200, 'msg': 'success', 'data': {}}
     req = ''
-    if g.current_user.uid in global_dict:
-        req = global_dict[g.current_user.uid]['symbol']
+    if hasattr(g,'uid'):
+        req = g.uid['symbol']
     else:
         req = '000938.SZ'
     if req[-1] == 'Z':

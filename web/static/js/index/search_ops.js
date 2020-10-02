@@ -5,7 +5,7 @@ var search_ops = {
         this.eventBind();
     },
     eventBind:function(){
-        $(".search_wrapper .search").click( function(){
+        $(".search_wrapper #search_stock").click(function(){
            var search_target = $('#form_container input[name=stockname]');
            var symbol = search_target.val();
            var data = {

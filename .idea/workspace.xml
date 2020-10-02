@@ -2,9 +2,145 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67596828-4dfe-4e98-8853-512fe8822ab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/base/view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cgutil/i18nstr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/enums/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/enums/error_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/exception.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/exceptions/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/exceptions/exception.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/response_util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/str.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/utils/date_util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/utils/num_util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/business/gen_index_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/base/stocklab_request.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/mdb-favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/overlays/01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/overlays/02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/overlays/03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/overlays/04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/overlays/05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/overlays/06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/overlays/07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/overlays/08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/overlays/09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/svg/arrow_left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/img/svg/arrow_right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/index/history_table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/datatables-select.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/datatables-select.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/datatables-select2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/datatables-select2.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/datatables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/datatables.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/datatables2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/datatables2.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/directives.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/directives.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/flag.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/flag.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/imagesloaded.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/imagesloaded.pkgd.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/jquery.zmd.hierarchical-display.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/jquery.zmd.hierarchical-display.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/masonry.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/masonry.pkgd.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/rating.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/addons/rating.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/mdb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/mdb.lite.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/mdb.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/mdb.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/animations-extended.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/animations-extended.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/forms-free.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/forms-free.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/scrolling-navbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/scrolling-navbar.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/treeview.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/treeview.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/wow.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/modules/wow.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/js/js_mdb/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/_custom-styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/_custom-variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/addons/_datatables-select.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/addons/_datatables-select2.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/addons/_datatables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/addons/_datatables2.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/addons/_directives.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/addons/_flag.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/addons/_hierarchical-display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/addons/_rating.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/_colors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/_global.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/_helpers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/_masks.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/_typography.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/_waves.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/bootstrap/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/bootstrap/_rfs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/core/bootstrap/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_animations-basic.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_badges.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_cards.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_carousels.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_depreciated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_dropdowns.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_footers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_loader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_modals.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_msc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_navbars.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_steppers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/_treeview.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/modules/animations-extended/_module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/free/modules/animations-extended/animations-extended.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/mdb-free.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/scss/mdb-lite-free.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/free/forms-free.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/free/scrolling-navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/free/treeview.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/free/wow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/addons/datatables-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/addons/datatables-select2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/addons/datatables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/addons/datatables2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/addons/imagesloaded.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/addons/jquery.zmd.hierarchical-display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/addons/masonry.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/addons/rating.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/free/bs-custom-file-input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/free/chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/free/chartjs-datalabels.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/free/enhanced-modals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/free/jquery.easing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/free/velocity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/index/src/js/vendor/free/waves.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/base/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/base/view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/controllers/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/interceptors/AuthInterceptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/interceptors/AuthInterceptor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/common/avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/common/background.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/common/ironman.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/images/common/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/index/search_ops.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/index/search_ops.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/index/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/index/partials/header.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,16 +150,151 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/controllers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="776" column="18" selection-start-line="776" selection-start-column="18" selection-end-line="776" selection-end-column="18" />
+            <state relative-caret-position="156">
+              <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
               <folding>
-                <element signature="e#24#38#0" expanded="true" />
+                <element signature="e#7969#8003#0" />
+                <element signature="e#8038#8313#1" />
+                <element signature="e#8598#8736#0" />
+                <element signature="e#8962#9555#0" />
+                <element signature="e#9038#9555#0" />
+                <element signature="e#9109#9168#0" />
+                <element signature="e#9241#9405#0" />
+                <element signature="e#9598#10877#0" />
+                <element signature="e#9752#10142#0" />
+                <element signature="e#10213#10540#0" />
+                <element signature="e#10412#10470#0" />
+                <element signature="e#10608#10877#0" />
+                <element signature="e#10749#10807#0" />
+                <element signature="e#11176#11785#0" />
+                <element signature="e#11211#11463#0" />
+                <element signature="e#11509#11785#0" />
+                <element signature="e#11940#12203#1" />
+                <element signature="e#12285#15925#0" />
+                <element signature="e#12503#12662#0" />
+                <element signature="e#12929#13496#0" />
+                <element signature="e#12973#13032#0" />
+                <element signature="e#13099#13496#0" />
+                <element signature="e#13206#13346#0" />
+                <element signature="e#13539#14841#0" />
+                <element signature="e#13701#14091#0" />
+                <element signature="e#14162#14496#0" />
+                <element signature="e#14368#14426#0" />
+                <element signature="e#14564#14841#0" />
+                <element signature="e#14713#14771#0" />
+                <element signature="e#15140#15765#0" />
+                <element signature="e#15175#15435#0" />
+                <element signature="e#15481#15765#0" />
+                <element signature="e#16007#19638#0" />
+                <element signature="e#16223#16379#0" />
+                <element signature="e#16646#17215#0" />
+                <element signature="e#16722#17215#0" />
+                <element signature="e#16793#16852#0" />
+                <element signature="e#16925#17065#0" />
+                <element signature="e#17258#18557#0" />
+                <element signature="e#17419#17809#0" />
+                <element signature="e#17880#18213#0" />
+                <element signature="e#18085#18143#0" />
+                <element signature="e#18281#18557#0" />
+                <element signature="e#18429#18487#0" />
+                <element signature="e#18856#19479#0" />
+                <element signature="e#18891#19150#0" />
+                <element signature="e#19196#19479#0" />
+                <element signature="e#19735#20877#0" />
+                <element signature="e#20174#20852#0" />
+                <element signature="e#20543#20746#0" />
+                <element signature="e#20966#22362#0" />
+                <element signature="e#21242#21277#0" />
+                <element signature="e#21505#22058#0" />
+                <element signature="e#21798#22058#0" />
+                <element signature="e#22170#22218#0" />
+                <element signature="e#22477#23545#0" />
+                <element signature="e#22985#23455#0" />
+                <element signature="e#23341#23393#0" />
+                <element signature="e#23671#24110#0" />
+                <element signature="e#23837#23910#0" />
+                <element signature="e#24207#24622#0" />
+                <element signature="e#24713#25380#0" />
+                <element signature="e#25477#29783#0" />
+                <element signature="e#25844#29758#0" />
+                <element signature="e#26815#26887#0" />
+                <element signature="e#26896#26970#0" />
+                <element signature="e#27155#27200#0" />
+                <element signature="e#27209#27239#0" />
+                <element signature="e#27900#28115#0" />
+                <element signature="e#28175#28389#0" />
+                <element signature="e#28470#28792#0" />
+                <element signature="e#28891#29100#0" />
+                <element signature="e#29127#29163#0" />
+                <element signature="e#29193#29649#0" />
+                <element signature="e#29442#29649#0" />
+                <element signature="e#29496#29571#0" />
+                <element signature="e#29658#29666#0" />
+                <element signature="e#29839#29892#0" />
+                <element signature="e#29979#30608#0" />
+                <element signature="e#30313#30592#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/business/gen_index_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/index/partials/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/templates/index/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="132" column="22" lean-forward="true" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/static/js/index/history_table.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/static/js/index/search_ops.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/index/partials/footer.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -32,42 +303,46 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nh_predict</find>
-      <find>nh</find>
-      <find>write_all</find>
-      <find>before_request</find>
-      <find>update</find>
-      <find>3</find>
-      <find>result_date</find>
-      <find>option</find>
-      <find>predict_second_up</find>
-      <find>refresh_stocklist</find>
-      <find>html_nh</find>
-      <find>current_price</find>
-      <find>goal_price</find>
-      <find>form-control</find>
-      <find>contain</find>
-      <find>before_req</find>
-      <find>f</find>
-      <find>请输入符合规范</find>
-      <find>search_wrapper</find>
-      <find>set_sale_point</find>
-      <find>请输入符合规范的股票代码</find>
-      <find>search_ops</find>
-      <find>selector_ops</find>
-      <find>init</find>
-      <find>before_re</find>
-      <find>g.sale_point</find>
       <find>db.session</find>
       <find>define</find>
-      <find>sale_point</find>
       <find>route_index</find>
+      <find>before_re</find>
+      <find>CreditException</find>
+      <find>create_app</find>
+      <find>logger</find>
+      <find>ExceptionStr</find>
+      <find>global_data</find>
+      <find>redis_client</find>
+      <find>error</find>
+      <find>print</find>
+      <find>search_wrapper</find>
+      <find>search</find>
+      <find>index</find>
+      <find>application/json</find>
+      <find>error_re</find>
+      <find>application</find>
+      <find>sale_point</find>
+      <find>before_request</find>
+      <find>global_dict</find>
+      <find>hold_stock</find>
+      <find>stock_list</find>
+      <find>hold_list</find>
+      <find>credit.ex.system_error</find>
+      <find>history_list</find>
+      <find>desc</find>
+      <find>history_table_length</find>
+      <find>buildStaticUrl</find>
+      <find>histor</find>
     </findStrings>
+    <replaceStrings>
+      <replace>stocklab.ex.system_error</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
@@ -88,23 +363,38 @@
         <option value="$PROJECT_DIR$/update_job.py" />
         <option value="$PROJECT_DIR$/service/business/view_utils.py" />
         <option value="$PROJECT_DIR$/web/static/css/index.css" />
-        <option value="$PROJECT_DIR$/web/interceptors/AuthInterceptor.py" />
-        <option value="$PROJECT_DIR$/web/templates/index/index.html" />
         <option value="$PROJECT_DIR$/web/static/js/index/set_sale_point.js" />
         <option value="$PROJECT_DIR$/web/static/js/index/plot_figure.js" />
-        <option value="$PROJECT_DIR$/web/templates/index/partials/header.html" />
-        <option value="$PROJECT_DIR$/web/static/js/index/search_ops.js" />
         <option value="$PROJECT_DIR$/web/static/js/common.js" />
         <option value="$PROJECT_DIR$/common/models/UserInfo.py" />
+        <option value="$PROJECT_DIR$/web/interceptors/AuthInterceptor.py" />
+        <option value="$PROJECT_DIR$/web/base/credit_request.py" />
+        <option value="$PROJECT_DIR$/common/utils/date_util.py" />
+        <option value="$PROJECT_DIR$/common/utils/num_util.py" />
+        <option value="$PROJECT_DIR$/common/exception.py" />
+        <option value="$PROJECT_DIR$/common/enums/__init__.py" />
+        <option value="$PROJECT_DIR$/common/error_code.py" />
+        <option value="$PROJECT_DIR$/common/exceptions/exception.py" />
+        <option value="$PROJECT_DIR$/common/utils/log.py" />
+        <option value="$PROJECT_DIR$/common/enums/error_code.py" />
+        <option value="$PROJECT_DIR$/common/response_util.py" />
+        <option value="$PROJECT_DIR$/web/static/js/index/search_ops.js" />
+        <option value="$PROJECT_DIR$/web/base/view.py" />
         <option value="$PROJECT_DIR$/web/controllers/index.py" />
+        <option value="$PROJECT_DIR$/common/str.py" />
+        <option value="$PROJECT_DIR$/web/templates/index/partials/footer.html" />
+        <option value="$PROJECT_DIR$/web/static/js/index/history_table.js" />
+        <option value="$PROJECT_DIR$/web/templates/index/partials/header.html" />
+        <option value="$PROJECT_DIR$/service/business/gen_index_data.py" />
+        <option value="$PROJECT_DIR$/web/templates/index/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="834" />
-    <option name="y" value="-1000" />
-    <option name="width" value="1517" />
-    <option name="height" value="890" />
+    <option name="x" value="26" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="832" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -122,30 +412,45 @@
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
@@ -198,6 +503,46 @@
               <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
               <item name="flask" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
+              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
+              <item name="flask_script" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
+              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
+              <item name="werkzeug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
+              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
+              <item name="werkzeug" type="462c0819:PsiDirectoryNode" />
+              <item name="wrappers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
+              <item name="-1506120976" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
+            </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
+              <item name="-1506120976" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
+              <item name="logging" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -213,7 +558,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/base" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/static/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -222,12 +567,18 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/base" />
-      <recent name="$PROJECT_DIR$/web/static/js/index" />
+      <recent name="$PROJECT_DIR$/web/static/js" />
+      <recent name="$PROJECT_DIR$/web/static" />
+      <recent name="$PROJECT_DIR$/web/templates/index" />
+      <recent name="$PROJECT_DIR$/common/utils" />
+      <recent name="$PROJECT_DIR$/cgutil" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/common/enums" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -243,6 +594,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.manager">
+    <configuration name="date_util" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="stocklab2_new_2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/utils/date_util.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="stocklab2_new_2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -290,10 +663,12 @@
     <list>
       <item itemvalue="Python.manager" />
       <item itemvalue="Python.update_job" />
+      <item itemvalue="Python.date_util" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.manager" />
+        <item itemvalue="Python.date_util" />
         <item itemvalue="Python.update_job" />
         <item itemvalue="Python.manager" />
       </list>
@@ -317,34 +692,35 @@
       <workItem from="1601096681478" duration="5966000" />
       <workItem from="1601109963019" duration="3357000" />
       <workItem from="1601214799824" duration="8068000" />
-      <workItem from="1601466450696" duration="248000" />
+      <workItem from="1601466450696" duration="11231000" />
+      <workItem from="1601603823287" duration="7953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40372000" />
+    <option name="totallyTimeSpent" value="59308000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="834" y="-1000" width="1517" height="890" extended-state="0" />
+    <frame x="26" y="23" width="1440" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18033898" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19241774" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.41724616" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43671766" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49958643" visible="true" weight="0.36680615" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32823366" />
-      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49963045" visible="true" weight="0.14064516" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49963045" weight="0.31337047" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.5284974" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50036955" side_tool="true" weight="0.3488095" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.5368568" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49958643" weight="0.27576602" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50041354" side_tool="true" weight="0.52387094" />
+      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4987593" weight="0.5367742" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -352,6 +728,31 @@
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18033898" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41724616" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49958643" weight="0.48903227" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32823366" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49963045" visible="true" weight="0.31564245" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49958643" weight="0.27793297" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50041354" side_tool="true" weight="0.52387094" />
+      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4987593" weight="0.5367742" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.19733925" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -421,7 +822,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/stocklab2_new_2$update_job.coverage" NAME="update_job Coverage Results" MODIFIED="1601218736938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/stocklab2_new_2$manager.coverage" NAME="manager Coverage Results" MODIFIED="1601219135909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stocklab2_new_2$manager.coverage" NAME="manager Coverage Results" MODIFIED="1601628455002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -438,156 +839,171 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/1931932585/845680817/flask_script/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/application.py">
+    <entry file="file://$PROJECT_DIR$/web/view.py" />
+    <entry file="file://$PROJECT_DIR$/common/enums/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state relative-caret-position="456">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/data.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/models/NhResult.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="51" selection-start-column="51" selection-end-column="51" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/common/utils/num_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/local_setting.py">
+    <entry file="file://$PROJECT_DIR$/common/exceptions/exception.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        <state relative-caret-position="76">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/exceptions/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cgutil/i18nstr.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask_script/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="156" column="22" lean-forward="true" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/utils/log.py" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/-1506120976/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-269">
+          <caret line="1223" column="14" selection-start-line="1223" selection-start-column="8" selection-end-line="1223" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        <state relative-caret-position="19">
+          <caret line="1" column="12" selection-start-line="1" selection-end-line="1" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/flask_script/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="395" column="8" selection-start-line="395" selection-start-column="8" selection-end-line="395" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/-1506120976/enum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-179">
+          <caret line="519" column="6" selection-start-line="519" selection-start-column="6" selection-end-line="519" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/enums/error_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#16#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/apscheduler/schedulers/base.py">
+    <entry file="file://$PROJECT_DIR$/web/static/js/index/add_stock.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="392" column="81" selection-start-line="392" selection-start-column="77" selection-end-line="392" selection-end-column="81" />
+        <state relative-caret-position="133">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/ComputeIndex.py">
+    <entry file="file://$PROJECT_DIR$/web/static/js/index/plot_figure.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="465" column="22" selection-start-line="465" selection-start-column="16" selection-end-line="465" selection-end-column="22" />
+        <state relative-caret-position="356">
+          <caret line="322" column="33" selection-start-line="322" selection-start-column="33" selection-end-line="322" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/Predict.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/werkzeug/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="2867">
+          <caret line="1068" column="4" selection-start-line="1068" selection-start-column="4" selection-end-line="1068" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/common/WriteDb.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/werkzeug/wrappers/common_descriptors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        <state relative-caret-position="-1765">
+          <caret line="130" column="6" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/common/ReadDb.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/flask/wrappers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        <state relative-caret-position="118">
+          <caret line="102" column="23" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/BackPrediction.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/GetData.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/werkzeug/wrappers/response.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2793">
-          <caret line="156" column="37" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="37" />
+        <state relative-caret-position="238">
+          <caret line="66" column="7" selection-start-line="66" selection-start-column="4" selection-end-line="71" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/MockTransaction.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/Predict_Gene.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/jobs/update.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update_job.py">
+    <entry file="file://$PROJECT_DIR$/common/response_util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="90" column="20" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
+        <state relative-caret-position="221">
+          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
           <folding>
-            <element signature="e#51#112#0" expanded="true" />
+            <element signature="e#24#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runtime.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/root@182.92.226.104" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/web/static/js/index/current_price.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        <state relative-caret-position="266">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/business/view_utils.py">
+    <entry file="file://$PROJECT_DIR$/web/base/view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding>
-            <element signature="e#24#43#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="209">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/static.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/web/static/js/index/set_sale_point.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/werkzeug/wrappers/base_response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="98" lean-forward="true" selection-start-line="90" selection-start-column="18" selection-end-line="98" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/flask/globals.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="1901" column="12" lean-forward="true" selection-start-line="1901" selection-start-column="12" selection-end-line="1901" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/models/UserInfo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        <state relative-caret-position="172">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -601,122 +1017,220 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www.py">
+    <entry file="file://$PROJECT_DIR$/common/exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/base/stocklab_request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/flask/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="176" column="4" selection-start-line="176" selection-start-column="4" selection-end-line="176" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/js/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/str.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/libs/Helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index/css_mdb/addons/flag.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index/img/svg/arrow_left.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index/js/addons/flag.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index/scss/core/bootstrap/_rfs.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index/src/js/free/wow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/img/svg/arrow_left.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index/css_mdb/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/css_mdb/addons/flag.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#42#88#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/set_sale_point.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2546">
-          <caret line="134" column="16" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/plugins/layer/layer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="2123" selection-start-line="1" selection-start-column="2123" selection-end-line="1" selection-end-column="2123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="130" selection-start-line="33" selection-start-column="116" selection-end-line="33" selection-end-column="130" />
-          <folding>
-            <element signature="e#1462#1468#0" expanded="true" />
-            <element signature="e#1474#1480#0" expanded="true" />
-            <element signature="e#1509#1515#0" expanded="true" />
-            <element signature="e#1521#1527#0" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/web/static/js/js_mdb/addons/flag.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/web/templates/index/partials/footer.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/index/partials/header.html">
+    <entry file="file://$PROJECT_DIR$/web/static/js/index/history_table.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/plot_figure.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6118">
-          <caret line="322" column="33" selection-start-line="322" selection-start-column="33" selection-end-line="322" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/current_price.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/add_stock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="57">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/js/index/search_ops.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="133">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/selector.js">
+    <entry file="file://$PROJECT_DIR$/web/templates/index/partials/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        <state relative-caret-position="284">
+          <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/base/view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-982" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/controllers/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="776" column="18" selection-start-line="776" selection-start-column="18" selection-end-line="776" selection-end-column="18" />
+        <state relative-caret-position="156">
+          <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
           <folding>
-            <element signature="e#24#38#0" expanded="true" />
+            <element signature="e#7969#8003#0" />
+            <element signature="e#8038#8313#1" />
+            <element signature="e#8598#8736#0" />
+            <element signature="e#8962#9555#0" />
+            <element signature="e#9038#9555#0" />
+            <element signature="e#9109#9168#0" />
+            <element signature="e#9241#9405#0" />
+            <element signature="e#9598#10877#0" />
+            <element signature="e#9752#10142#0" />
+            <element signature="e#10213#10540#0" />
+            <element signature="e#10412#10470#0" />
+            <element signature="e#10608#10877#0" />
+            <element signature="e#10749#10807#0" />
+            <element signature="e#11176#11785#0" />
+            <element signature="e#11211#11463#0" />
+            <element signature="e#11509#11785#0" />
+            <element signature="e#11940#12203#1" />
+            <element signature="e#12285#15925#0" />
+            <element signature="e#12503#12662#0" />
+            <element signature="e#12929#13496#0" />
+            <element signature="e#12973#13032#0" />
+            <element signature="e#13099#13496#0" />
+            <element signature="e#13206#13346#0" />
+            <element signature="e#13539#14841#0" />
+            <element signature="e#13701#14091#0" />
+            <element signature="e#14162#14496#0" />
+            <element signature="e#14368#14426#0" />
+            <element signature="e#14564#14841#0" />
+            <element signature="e#14713#14771#0" />
+            <element signature="e#15140#15765#0" />
+            <element signature="e#15175#15435#0" />
+            <element signature="e#15481#15765#0" />
+            <element signature="e#16007#19638#0" />
+            <element signature="e#16223#16379#0" />
+            <element signature="e#16646#17215#0" />
+            <element signature="e#16722#17215#0" />
+            <element signature="e#16793#16852#0" />
+            <element signature="e#16925#17065#0" />
+            <element signature="e#17258#18557#0" />
+            <element signature="e#17419#17809#0" />
+            <element signature="e#17880#18213#0" />
+            <element signature="e#18085#18143#0" />
+            <element signature="e#18281#18557#0" />
+            <element signature="e#18429#18487#0" />
+            <element signature="e#18856#19479#0" />
+            <element signature="e#18891#19150#0" />
+            <element signature="e#19196#19479#0" />
+            <element signature="e#19735#20877#0" />
+            <element signature="e#20174#20852#0" />
+            <element signature="e#20543#20746#0" />
+            <element signature="e#20966#22362#0" />
+            <element signature="e#21242#21277#0" />
+            <element signature="e#21505#22058#0" />
+            <element signature="e#21798#22058#0" />
+            <element signature="e#22170#22218#0" />
+            <element signature="e#22477#23545#0" />
+            <element signature="e#22985#23455#0" />
+            <element signature="e#23341#23393#0" />
+            <element signature="e#23671#24110#0" />
+            <element signature="e#23837#23910#0" />
+            <element signature="e#24207#24622#0" />
+            <element signature="e#24713#25380#0" />
+            <element signature="e#25477#29783#0" />
+            <element signature="e#25844#29758#0" />
+            <element signature="e#26815#26887#0" />
+            <element signature="e#26896#26970#0" />
+            <element signature="e#27155#27200#0" />
+            <element signature="e#27209#27239#0" />
+            <element signature="e#27900#28115#0" />
+            <element signature="e#28175#28389#0" />
+            <element signature="e#28470#28792#0" />
+            <element signature="e#28891#29100#0" />
+            <element signature="e#29127#29163#0" />
+            <element signature="e#29193#29649#0" />
+            <element signature="e#29442#29649#0" />
+            <element signature="e#29496#29571#0" />
+            <element signature="e#29658#29666#0" />
+            <element signature="e#29839#29892#0" />
+            <element signature="e#29979#30608#0" />
+            <element signature="e#30313#30592#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business/gen_index_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="132" column="22" lean-forward="true" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

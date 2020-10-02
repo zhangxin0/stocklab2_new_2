@@ -28,6 +28,18 @@ def before_request():
         return redirect(UrlManager.buildUrl("/user/login"))
     return
 
+@app.before_request
+def timer_begin():
+    """
+    记录接口开始时间
+    """
+    from flask import request
+    import time
+    request.process_begin = time.time()
+
+@app.after_request
+def after_request(response):
+    return response
 
 def check_login():
     cookies = request.cookies
