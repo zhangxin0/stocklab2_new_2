@@ -402,9 +402,15 @@ def search():
             # 数据意义：trade_date,开盘(open)，收盘(close)，最低(lowest)，最高(highest)
             values = [element.trade_date, element.open, element.close, element.low, element.high, element.vol]
             data0.append(values)
+        user_info = UserInfo.query.filter_by(user_id=g.current_user.uid).first()
+        if user_info:
+            sale_point = user_info.sale_point or 4
+        else:
+            sale_point = 4
         resp['data0'] = data0
         resp['name'] = data[0].name
         resp['symbol'] = data[0].symbol
+        resp['sale_point'] = (100+sale_point)/100
     return jsonify(resp)
 
 
@@ -559,9 +565,12 @@ def get_strategy():
     for element in hold_list:
         # 用来判断是否需要写入历史数据库
         flag = True
-        # 每一只股充值sale_point，否则延续上一次修改的sale_point
+        # 每一只股set sale_point，否则延续上一次修改的sale_point
         user_info = UserInfo.query.filter_by(user_id=g.current_user.uid).first()
-        sale_point = user_info.sale_point or 4
+        if user_info:
+            sale_point = user_info.sale_point or 4
+        else:
+            sale_point = 4
         symbol = element.hold_stock
         if symbol[-1] == 'Z':
             symbol_url = 'sz' + symbol[0:6]

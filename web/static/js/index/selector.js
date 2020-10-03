@@ -159,12 +159,13 @@ var selector_ops = {
                                   buy_price = resp.buy_price
                                   var myChart = echarts.init(document.getElementById('main'));
                                   myChart.hideLoading();
-                                  option = setOption(data0,resp['name'],resp['symbol']);
+                                  option = setOption(data0,resp.name,resp.symbol);
                                   myChart.setOption(option,true);
                                   // 这里只更新了图，没有对价格栏进行更新:
                                   var html = '';
                                   if(buy_price){
-                                      goal_price = (buy_price*1.04).toFixed(2);
+                                      var sale_point = resp.sale_point
+                                      goal_price = (buy_price*sale_point).toFixed(2);
                                       html=  "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"</h2>";
                                   }else{
                                        html=  "<h2 id='current_price'>当前价:----</h2>";
