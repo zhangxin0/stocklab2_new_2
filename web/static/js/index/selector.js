@@ -1,7 +1,7 @@
 ;
 /* 本文件功能：
 * 3个选股算法的 点击事件
-*
+* ajax返回参数改写element html后，监听失效，如何重启"点击"监听？
 *
 * */
 //只刷新指定div:选股结果 load只能执行一次
@@ -14,10 +14,10 @@ var selector_ops = {
         $("#nh_selector").click(function(){
             var btn_target = $(this);
             $("#nh_selector").html("选股中，请稍等..");
-            if (btn_target.hasClass("disabled")){
-                    common_ops.alert("正在选股...请稍后");
-                    return;
-             }
+            // if (btn_target.hasClass("disabled")){
+            //         common_ops.alert("正在选股...请稍后");
+            //         return;
+            //  }
             btn_target.addClass("disabled");
             $.ajax({
                 url:common_ops.buildUrl( "/nh_predict" ),
@@ -25,30 +25,31 @@ var selector_ops = {
                 success:function( res ){
                     if(res.code == 200){
                         $("#nh_selector").html("粘合选股");
-                        // 刷新选股结果: 刷新选股结果div
-                        $("#ul_nh").html(res.html);
                         common_ops.alert("更新完成！");
+                        // 刷新选股结果: 刷新选股结果div
+                        $("#ul_nh").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        // selector_ops.init();
                     }
                     if(res.code == -1){
                         $("#nh_selector").html("粘合选股");
                         // 刷新选股结果: 刷新选股结果div
-                        $("#ul_nh").html(res.html);
                         common_ops.alert("选股结果已更新！");
+                        $("#ul_nh").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        // selector_ops.init();
                     }
                 }
             });
         });
+
         $("#gold_cross_selector").click(function(){
             var btn_target = $(this);
             $("#gold_cross_selector").html("选股中，请稍等..");
-            if (btn_target.hasClass("disabled")){
-                    common_ops.alert("正在选股...请稍后");
-                    return;
-             }
+            // if (btn_target.hasClass("disabled")){
+            //         common_ops.alert("正在选股...请稍后");
+            //         return;
+            //  }
             btn_target.addClass("disabled");
             $.ajax({
                 url:common_ops.buildUrl( "/gold_cross_predict" ),
@@ -57,18 +58,20 @@ var selector_ops = {
                     if(res.code == 200){
                         $("#gold_cross_selector").html("金叉选股");
                         // 刷新选股结果: 刷新选股结果div
-                        $("#ul_gold_cross").html(res.html);
                         common_ops.alert("更新完成！");
+                        $("#ul_gold_cross").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        // selector_ops.init();
+                        // 点击完毕后，stock list监听点击取消
+
                     }
                     if(res.code == -1){
                         $("#gold_cross_selector").html("金叉选股");
                         // 刷新选股结果: 刷新选股结果div
-                        $("#ul_gold_cross").html(res.html);
                         common_ops.alert("选股结果已更新！");
+                        $("#ul_gold_cross").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        // selector_ops.init();
                     }
                 }
             });
@@ -77,10 +80,10 @@ var selector_ops = {
         $("#second_up_selector").click(function(){
             var btn_target = $(this);
             $("#second_up_selector").html("选股中，请稍等..");
-            if (btn_target.hasClass("disabled")){
-                    common_ops.alert("正在选股...请稍后");
-                    return;
-             }
+            // if (btn_target.hasClass("disabled")){
+            //         common_ops.alert("正在选股...请稍后");
+            //         return;
+            //  }
             btn_target.addClass("disabled");
             $.ajax({
                 url:common_ops.buildUrl( "/second_up_predict" ),
@@ -89,18 +92,18 @@ var selector_ops = {
                     if(res.code == 200){
                         $("#second_up_selector").html("二次反弹");
                         // 刷新选股结果: 刷新选股结果div
-                        $("#ul_second_up").html(res.html);
                         common_ops.alert("更新完成！");
+                        $("#ul_second_up").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        // selector_ops.init();
                     }
                     if(res.code == -1){
                         $("#second_up_selector").html("二次反弹");
                         // 刷新选股结果: 刷新选股结果div
-                        $("#ul_second_up").html(res.html);
                         common_ops.alert("选股结果已更新！");
+                        $("#ul_second_up").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        // selector_ops.init();
                     }
                 }
             });
@@ -124,8 +127,8 @@ var selector_ops = {
                                 dataType:'json',
                                 success:function( resp ){
                                     $("#stock_list").html(resp.data);
-                                    selector_ops.init();
-                                    //window.location.href = common_ops.buildUrl( "/" );
+                                    // selector_ops.init();
+                                    // window.location.href = common_ops.buildUrl( "/" );
                                  }
                             });
                         },
@@ -191,8 +194,10 @@ var selector_ops = {
                                   data:{'symbol':symbol},
                                   success:function(resp){
                                       // 刷新stock_list div
-                                      $("#stock_list").html(resp.data);
-                                      selector_ops.init();
+                                      if(resp['code']==200){
+                                         $("#stock_list").html(resp.data);
+                                      }
+                                      // selector_ops.init();
                                       //window.location.href = common_ops.buildUrl( "/" );
                                   }
                               });

@@ -1,4 +1,5 @@
 # coding: utf-8
+import logging
 from flask import app,g,request,jsonify
 from common.models.UserInfo import UserInfo
 from common.models.TransactionHistory import TransactionHistory
@@ -13,7 +14,7 @@ from common.models.SecondUpResult import SecondUpResult
 class GenIndexDataService(object):
 
     @classmethod
-    def get_resp_data(cls):
+    def get_resp_data(cls, request_method='GET'):
         try:
             hold_list = UserInfo.query.filter_by(user_id=g.current_user.uid).order_by(UserInfo.buy_date).all()
             if hasattr(g,'uid'):
@@ -30,7 +31,7 @@ class GenIndexDataService(object):
             db_date = ('').join(readCursor.read().split('-'))
             page = 1
             limit = 10
-            history_list = TransactionHistory.query.filter_by(uid=g.current_user.uid).order_by(TransactionHistory.date.desc()).offset((page-1)*limit).limit(limit)
+            history_list = TransactionHistory.query.filter_by(uid=g.current_user.uid).order_by(TransactionHistory.date.desc()).offset((page-1)*limit).limit(limit).all()
             nh_result_list = NhResult.query.filter_by(date=db_date).all() or []
             gold_cross_result_list = GoldCrossResult.query.filter_by(date=db_date).all() or []
             second_up_result_list = SecondUpResult.query.filter_by(date=db_date).all() or []
@@ -51,7 +52,7 @@ class GenIndexDataService(object):
                     hold_time = stock_info.trade_date.index(buy_date) - 1
                     item.hold_time = hold_time
                 except Exception as e:
-                    app.logger.error(e)
+                    logging.info(e)
                     hold_time = 0
             # 生成selector的html:
             html_nh = ''
@@ -104,7 +105,7 @@ class GenIndexDataService(object):
             resp_data['html_nh'] = html_nh if html_nh else "<li id='nh_select_result'><span><i class='fa fa-plus plus-list' id='plus'></i>今天没有符合条件的股票哦～～</span></li>"
             resp_data['html_gold_cross'] = html_gold_cross if html_gold_cross else "<li id='nh_select_result'><span>今天没有符合条件的股票哦～～</span></li>"
             resp_data['html_second_up'] = html_second_up if html_second_up else "<li id='nh_select_result'><span>今天没有符合条件的股票哦～～</span></li>"
-            if request.method == 'POST':
+            if request_method == 'POST':
                 resp_data['code'] = 200
                 return jsonify(resp_data)
             resp_data['data0'] = data0

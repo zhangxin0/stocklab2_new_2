@@ -25,16 +25,25 @@ from web.controllers.notification.notify import Message
 from service.business.view_utils import ViewUtils
 from web.base.view import restful
 from service.business.gen_index_data import GenIndexDataService
+from common.models.UserPage import UserPage
 
 route_index = Blueprint('index_page', __name__)
-
+# 可以在内存中维持一个用户临时信息的dict，保存用户当前状态
 
 @route_index.route("/", methods=["GET", "POST"])
 @restful
 def index():
-    resp_data = GenIndexDataService.get_resp_data()
-    response = make_response(ops_render("index/index.html", resp_data))
-    return response
+    resp_data = GenIndexDataService.get_resp_data(request_method=request.method)
+    if request.method == 'POST':
+        return resp_data
+    # reset page to 1:
+    user_page_element = UserPage.query.filter_by(uid=g.current_user.uid).first()
+    if user_page_element:
+        user_page_element.page = 1
+    db.session.commit()
+    # POST from ajax 请求，返回的jsonify为response :: 区分请求方式的注意点
+    # render template 后面的数据为dict，在html中可以直接通过key调用value
+    return ops_render("index/index.html", resp_data)
 
 
 @route_index.route('/update')
@@ -387,7 +396,6 @@ def search():
         find_obj = UserInfo.query.filter(UserInfo.user_id == g.current_user.uid, UserInfo.hold_stock == symbol).first()
         if find_obj:
             resp['buy_price'] = find_obj.buy_price
-        g.uid['symbol'] = symbol
         # 制作数据接口:
         data = StockInfo.query.filter_by(symbol=symbol).order_by(StockInfo.trade_date).all()
         for element in data:
@@ -430,6 +438,10 @@ def add_list():
         db.session.commit()
     except Exception as e:
         app.logger.info(e)
+        # 如果存在重复，则返回code -1
+        resp['code'] = -1
+        return jsonify(resp)
+    # 之前session的exception会stop后面session的操作
     html = ViewUtils.refresh_stocklist()
     resp['data'] = html
     return jsonify(resp)
@@ -549,7 +561,7 @@ def get_strategy():
         flag = True
         # 每一只股充值sale_point，否则延续上一次修改的sale_point
         user_info = UserInfo.query.filter_by(user_id=g.current_user.uid).first()
-        sale_point = user_info.sale_point
+        sale_point = user_info.sale_point or 4
         symbol = element.hold_stock
         if symbol[-1] == 'Z':
             symbol_url = 'sz' + symbol[0:6]
@@ -668,5 +680,54 @@ def message():
         db.session.add(notification)
         db.session.commit()
     return resp
+
+
+@route_index.route('/get_history', methods=['GET'])
+@restful
+def get_history(page=1,limit=10):
+    from service.business.get_history_by_page import GetHistoryByPage
+    import math
+    resp = {'code': 200, 'msg': 'success', 'data': {}}
+    req = request.values
+    max_page = math.ceil((TransactionHistory.query.filter_by(uid=g.current_user.uid).count()/limit))
+    resp['data']['max_page'] = max_page
+    if 'page' in req:
+        page = int(req['page'])
+    else:
+        user_page = UserPage.query.filter_by(uid=g.current_user.uid).first()
+        # 没有页码记录
+        page = user_page.page if user_page else 1
+        previous = req['previous'] if 'previous' in req else False
+        next = req['next'] if 'next' in req else False
+
+        if previous:
+            page = page - 1
+        if next:
+            page = page + 1
+
+    # 超出上限处理
+    resp['data']['html_history_list']=''
+    resp['data']['page'] = page
+    if page < 1:
+        page = 1
+        resp['data']['disable'] = True
+        html_history_list = GetHistoryByPage.get_history_by_page(page, limit)
+        resp['data']['html_history_list'] = html_history_list
+    elif page > max_page:
+        page = max_page
+        resp['data']['disable'] = True
+    else:
+        html_history_list = GetHistoryByPage.get_history_by_page(page, limit)
+        resp['data']['html_history_list'] = html_history_list
+    # update page:
+    user_page_element = UserPage.query.filter_by(uid=g.current_user.uid).first()
+    if not user_page_element:
+        user_page_element = UserPage()
+        user_page_element.uid = g.current_user.uid
+    user_page_element.page = page
+    db.session.commit()
+    return jsonify(resp)
+
+
 
 

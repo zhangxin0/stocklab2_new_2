@@ -121,7 +121,7 @@
           <th class="th-sm" scope="col">状态</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="history_tbody">
           {% for item in history_list%}
             <tr height="40px">
                 <td>{{item.date}}</td>
@@ -133,6 +133,25 @@
           {% endfor %}
       </tbody>
     </table>
+    <div id="pagination_div">
+        <nav aria-label="Page navigation example" id="pagination_nav" style="margin-left:48%;">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" id="previous" href="#/get_history" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" id="page_1" class="page_num" href="#/get_history">1</a></li>
+            <li class="page-item"><a class="page-link" id="page_2" class="page_num" href="#/get_history">2</a></li>
+            <li class="page-item"><a class="page-link" id="page_3" class="page_num" href="#/get_history">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#/get_history" id="next" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </div>
 </div>
 <!--The k data figure-->
 {% include "/index/partials/footer.html" %}
