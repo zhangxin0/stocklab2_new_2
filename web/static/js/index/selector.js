@@ -109,7 +109,7 @@ var selector_ops = {
             });
         });
         // 点击移除持股列表:
-        $("#stockList").ready(function(){
+        $("#stock_list").ready(function(){
             // 持股列表检测点击： !如果没有选股结果， undefined error
             var obj_lis = $("#stock_list li span");
             var obj_trash = $("#stock_list li span i");
@@ -127,7 +127,7 @@ var selector_ops = {
                                 dataType:'json',
                                 success:function( resp ){
                                     $("#stock_list").html(resp.data);
-                                    // selector_ops.init();
+                                    selector_ops.init();
                                     // window.location.href = common_ops.buildUrl( "/" );
                                  }
                             });
@@ -163,12 +163,13 @@ var selector_ops = {
                                   myChart.setOption(option,true);
                                   // 这里只更新了图，没有对价格栏进行更新:
                                   var html = '';
+                                  sale_point = parseFloat(resp.sale_point);
                                   if(buy_price){
-                                      var sale_point = resp.sale_point
-                                      goal_price = (buy_price*sale_point).toFixed(2);
-                                      html=  "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"</h2>";
+                                      buy_price = buy_price.toFixed(2);
+                                      goal_price = (buy_price*(100+sale_point)/100).toFixed(2);
+                                      html= "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"&nbsp;&nbsp;&nbsp;&nbsp;当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                                   }else{
-                                       html=  "<h2 id='current_price'>当前价:----</h2>";
+                                      html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                                   }
                                   $("#price_holder").html(html);
                             }
@@ -198,7 +199,7 @@ var selector_ops = {
                                       if(resp['code']==200){
                                          $("#stock_list").html(resp.data);
                                       }
-                                      // selector_ops.init();
+                                      selector_ops.init();
                                       //window.location.href = common_ops.buildUrl( "/" );
                                   }
                               });
@@ -235,11 +236,13 @@ var selector_ops = {
                                 myChart.setOption(option,true);
                                 // 这里只更新了图，没有对价格栏进行更新:
                                 var html = '';
+                                sale_point = parseFloat(resp.sale_point);
                                 if(buy_price){
-                                    goal_price = (buy_price*1.05).toFixed(2);
-                                    html=  "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"</h2>";
+                                    buy_price = buy_price.toFixed(2);
+                                    goal_price = (buy_price*(100+sale_point)/100).toFixed(2);
+                                    html= "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"&nbsp;&nbsp;&nbsp;&nbsp;当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                                 }else{
-                                     html=  "<h2 id='current_price'>当前价:----</h2>";
+                                    html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                                 }
                                 $("#price_holder").html(html);
                             }

@@ -9,16 +9,16 @@ from web.controllers.compute.common.ComputeIndex import ComputeIndex
 from common.models.StockInfo import StockInfo
 from common.models.GoldCrossResult import GoldCrossResult
 from common.models.SecondUpResult import SecondUpResult
-
+from common.global_var import GlobalVar
 
 class GenIndexDataService(object):
-
+    global_dict = GlobalVar.global_dict
     @classmethod
     def get_resp_data(cls, request_method='GET'):
         try:
             hold_list = UserInfo.query.filter_by(user_id=g.current_user.uid).order_by(UserInfo.buy_date).all()
-            if hasattr(g,'uid'):
-                symbol = g.uid['symbol']
+            if g.current_user.uid in cls.global_dict:
+                symbol = cls.global_dict[g.current_user.uid]['symbol']
             else:
                 # 如果symbol为空，从持股列表中读取，再为空，设定为default
                 if not hold_list:
@@ -26,7 +26,7 @@ class GenIndexDataService(object):
                 else:
                     symbol = hold_list[-1].hold_stock
             # 将空的global-symbol赋值，这样get_price就可以获取到当下symbol的值:
-            g.uid = {'symbol':symbol}
+            global_dict = {g.current_user.uid:{'symbol':symbol}}
             readCursor = ReadCursor()
             db_date = ('').join(readCursor.read().split('-'))
             page = 1
@@ -117,6 +117,7 @@ class GenIndexDataService(object):
             find_obj = UserInfo.query.filter(UserInfo.user_id == g.current_user.uid, UserInfo.hold_stock == symbol).first()
             user_info = UserInfo.query.filter_by(user_id=g.current_user.uid).first()
             sale_point = user_info.sale_point or 4 if user_info else 4
+            resp_data['sale_point'] = sale_point
             if find_obj:
                 resp_data['buy_price'] = round(find_obj.buy_price, 2)
                 resp_data['goal_price'] = round(find_obj.buy_price * (100+sale_point)/100, 2)

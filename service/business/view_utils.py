@@ -13,10 +13,10 @@ class ViewUtils(object):
         # 计算股票持有时间，并添加到user_info.hold_time:
         for item in hold_list:
             stock_info = ComputeIndex(item.hold_stock, 0)
-            # 买入当天为0
+            # 买入当天为0-->1
             try:
                 buy_date = item.buy_date[0:4] + '-' + item.buy_date[4:6] + '-' + item.buy_date[6:]
-                hold_time = stock_info.trade_date.index(buy_date) - 1
+                hold_time = stock_info.trade_date.index(buy_date)
                 item.hold_time = hold_time
             except Exception as e:
                 app.logger.error(e)

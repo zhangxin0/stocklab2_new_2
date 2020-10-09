@@ -26,6 +26,7 @@ var set_sale_point_ops = {
                     if(resp.code == 200){
                         common_ops.alert("卖点设置成功！");
                         set_sale_point_ops.init();
+                        window.location.replace("/");
                     }
                     if(resp.code == -1){
                         common_ops.alert("卖点格式错误，请输入符合规范的卖点！");

@@ -26,8 +26,11 @@ from service.business.view_utils import ViewUtils
 from web.base.view import restful
 from service.business.gen_index_data import GenIndexDataService
 from common.models.UserPage import UserPage
+from service.business.get_rps import GetRps
+from common.global_var import GlobalVar
 
 route_index = Blueprint('index_page', __name__)
+global_dict = GlobalVar.global_dict
 # 可以在内存中维持一个用户临时信息的dict，保存用户当前状态
 
 @route_index.route("/", methods=["GET", "POST"])
@@ -385,6 +388,7 @@ def search():
         symbol += '.SS'
     else:
         symbol += '.SZ'
+    global_dict[g.current_user.uid] = {'symbol':symbol}
     symbols = []
     data0 = []
     stock_list = StockList.query.all()
@@ -410,7 +414,7 @@ def search():
         resp['data0'] = data0
         resp['name'] = data[0].name
         resp['symbol'] = data[0].symbol
-        resp['sale_point'] = (100+sale_point)/100
+        resp['sale_point'] = sale_point
     return jsonify(resp)
 
 
@@ -532,10 +536,12 @@ def delete_list():
 def get_price():
     resp = {'code': 200, 'msg': 'success', 'data': {}}
     req = ''
-    if hasattr(g,'uid'):
-        req = g.uid['symbol']
+    if g.current_user.uid in global_dict:
+        req = global_dict[g.current_user.uid]['symbol']
+        symbol = req
     else:
         req = '000938.SZ'
+        symbol = req
     if req[-1] == 'Z':
         req = 'sz' + req[0:6]
     elif req[-1] == 'S':
@@ -551,6 +557,26 @@ def get_price():
     resp['data'] = price
     return resp
 
+@route_index.route('/get_rps', methods=['GET', 'POST'])
+@restful
+def get_rps():
+    resp = {'code': 200, 'msg': 'success', 'data': {}}
+    if g.current_user.uid in global_dict:
+        req = global_dict[g.current_user.uid]['symbol']
+        symbol = req
+    else:
+        req = '000938.SZ'
+        symbol = req
+    try:
+        resp['rps_day'],resp['rank_day'],resp['total_num_day'] = GetRps().get_rps(symbol,'day')
+        resp['rps_week'],resp['rank_week'],resp['total_num_week'] = GetRps().get_rps(symbol,'week')
+        resp['rps_month'],resp['rank_month'],resp['total_num_month'] = GetRps().get_rps(symbol, 'month')
+        html = f"&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):{resp['rps_day']} ({resp['rank_day']}/{resp['total_num_day']})&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):{resp['rps_week']}({resp['rank_week']}) &nbsp;&nbsp;&nbsp;&nbsp;RPS(M):{resp['rps_month']}({resp['rank_month']})</h2>"
+        resp['html'] = html
+    except Exception as e:
+        print(e)
+        resp['code'] = -1
+    return jsonify(resp)
 
 @route_index.route('/get_strategy', methods=['GET', 'POST'])
 @restful

@@ -28,7 +28,8 @@ var search_ops = {
                         var read_data = resp.data0;
                         var data0 = splitData(read_data);
                         // 更新buy_price
-                        buy_price = resp.buy_price
+                        buy_price = resp.buy_price;
+                        sale_point = parseFloat(resp.sale_point);
                         var myChart = echarts.init(document.getElementById('main'));
                         myChart.hideLoading();
                         option = setOption(data0,resp['name'],resp['symbol']);
@@ -37,12 +38,13 @@ var search_ops = {
                         var html = '';
                         if(buy_price){
                             buy_price = buy_price.toFixed(2);
-                            goal_price = (buy_price*1.04).toFixed(2);
-                            html=  "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"</h2>";
+                            goal_price = (buy_price*(100+sale_point)/100).toFixed(2);
+                            html= "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"&nbsp;&nbsp;&nbsp;&nbsp;当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                         }else{
-                             html=  "<h2 id='current_price'>当前价:----</h2>";
+                            html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                         }
                         $("#price_holder").html(html);
+                        search_ops.init();
                     }
                     if(resp.code == -1){
                         common_ops.alert("股票代码错误，请输入正确的股票代码！");

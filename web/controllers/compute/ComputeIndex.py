@@ -12,7 +12,7 @@ from web.controllers.compute.common.ReadDb import ReadDb
 
 class ComputeIndex():
     # select stock symbol from cur(date), if cur ==0 , from now or from history.
-    def __init__(self, symbol, cur, option):
+    def __init__(self, symbol, cur=0, option=None):
         # name, open, close, low, trade_date, high, vol
         self.symbol = symbol
         self.cur = cur
