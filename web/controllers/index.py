@@ -619,7 +619,7 @@ def get_strategy():
         # 强制卖出位置
         stock_info = ComputeIndex(symbol, 0)
         try:
-            hold_time = stock_info.trade_date.index(buy_date) - 1
+            hold_time = stock_info.trade_date.index(buy_date)
         except Exception as e:
             app.logger.error(e)
             hold_time = 0

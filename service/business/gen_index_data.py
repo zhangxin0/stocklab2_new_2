@@ -49,7 +49,7 @@ class GenIndexDataService(object):
                 # 买入当天为0
                 try:
                     buy_date = item.buy_date[0:4] + '-' + item.buy_date[4:6] + '-' + item.buy_date[6:]
-                    hold_time = stock_info.trade_date.index(buy_date) - 1
+                    hold_time = stock_info.trade_date.index(buy_date)
                     item.hold_time = hold_time
                 except Exception as e:
                     logging.info(e)

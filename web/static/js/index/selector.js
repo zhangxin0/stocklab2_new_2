@@ -29,7 +29,7 @@ var selector_ops = {
                         // 刷新选股结果: 刷新选股结果div
                         $("#ul_nh").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        // selector_ops.init();
+                        selector_ops.init();
                     }
                     if(res.code == -1){
                         $("#nh_selector").html("粘合选股");
@@ -37,7 +37,7 @@ var selector_ops = {
                         common_ops.alert("选股结果已更新！");
                         $("#ul_nh").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        // selector_ops.init();
+                        selector_ops.init();
                     }
                 }
             });
@@ -61,7 +61,7 @@ var selector_ops = {
                         common_ops.alert("更新完成！");
                         $("#ul_gold_cross").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        // selector_ops.init();
+                        selector_ops.init();
                         // 点击完毕后，stock list监听点击取消
 
                     }
@@ -71,7 +71,7 @@ var selector_ops = {
                         common_ops.alert("选股结果已更新！");
                         $("#ul_gold_cross").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        // selector_ops.init();
+                        selector_ops.init();
                     }
                 }
             });
@@ -95,7 +95,7 @@ var selector_ops = {
                         common_ops.alert("更新完成！");
                         $("#ul_second_up").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        // selector_ops.init();
+                        selector_ops.init();
                     }
                     if(res.code == -1){
                         $("#second_up_selector").html("二次反弹");
@@ -103,7 +103,7 @@ var selector_ops = {
                         common_ops.alert("选股结果已更新！");
                         $("#ul_second_up").innerHTML(res.html);
                         btn_target.removeClass('disabled');
-                        // selector_ops.init();
+                        selector_ops.init();
                     }
                 }
             });
@@ -172,6 +172,7 @@ var selector_ops = {
                                       html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                                   }
                                   $("#price_holder").html(html);
+                                  //selector_ops.init();
                             }
                             if(resp.code == -1){
                                 common_ops.alert("股票代码错误，请输入正确的股票代码！");
@@ -245,6 +246,7 @@ var selector_ops = {
                                     html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                                 }
                                 $("#price_holder").html(html);
+                                //selector_ops.init();
                             }
                             if(resp.code == -1){
                                 common_ops.alert("股票代码错误，请输入正确的股票代码！");

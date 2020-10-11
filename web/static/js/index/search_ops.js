@@ -44,7 +44,6 @@ var search_ops = {
                             html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                         }
                         $("#price_holder").html(html);
-                        search_ops.init();
                     }
                     if(resp.code == -1){
                         common_ops.alert("股票代码错误，请输入正确的股票代码！");
