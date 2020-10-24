@@ -615,7 +615,7 @@ def get_strategy():
         if cur_price == 0:
             # cur_price 读取为0时，置为买入价，表示无策略
             cur_price = buy_price - 0.0001
-        # 持有时间: 读取trade_date, 持有天数为: Index - 1,eg: 当天选出未买入 hold_time = -1, 买入当天: 0
+        # 持有时间: 读取trade_date, 持有天数为: Index - 1,eg: 当天选出未买入 hold_time = 0, 买入当天: 1
         # 强制卖出位置
         stock_info = ComputeIndex(symbol, 0)
         try:

@@ -57,6 +57,15 @@ class Update():
                     writeDb.write()
                 except Exception as e:
                     print('predict result write to db error!', e)
+            # 如果没有结果，也写入数据库
+            try:
+                # 写入数据库:
+                if not len(symbols):
+                    sql = f"insert into {table} (date) values ('{db_date}')"
+                    writeDb = WriteDb(sql)
+                    writeDb.write()
+            except Exception as e:
+                print('predict result write to db error!', e)
 
     def predict_nh(self):
         # 计算选股结果:
@@ -83,8 +92,9 @@ class Update():
         print('开始定时更新任务，每天18点更新数据库和19点更新选股结果.')
         scheduler = BlockingScheduler()
         scheduler.add_job(self.update, 'cron', hour=18, minute=0)
-        scheduler.add_job(self.predict_nh, 'cron', hour=18, minute=30)
-        scheduler.add_job(self.predict_gold_cross, 'cron', hour=18, minute=30)
+        scheduler.add_job(self.predict_nh, 'cron', hour=18, minute=10)
+        scheduler.add_job(self.predict_gold_cross, 'cron', hour=18, minute=20)
+        scheduler.add_job(self.predict_second_up, 'cron', hour=18, minute=30)
         try:
             scheduler.start()
         except Exception as e:

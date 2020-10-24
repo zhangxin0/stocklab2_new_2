@@ -8,7 +8,7 @@ num = 0
 
 
 async def request():
-    url = 'http://0.0.0.0:8999'
+    url = 'http://www.baidu.com'
     # try:
     global num
     #for i in range(total // coroutine_num):
@@ -16,11 +16,8 @@ async def request():
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as resp:
                 num += 1
-                print(await resp.text(), num)
-
-    # except Exception as e:
-    #     print(e)
-
+                #print(await resp.text(), num)
+                #print(num)
 
 async def download_all(start1):
     tasks = [asyncio.create_task(request()) for i in range(coroutine_num)]
@@ -32,7 +29,7 @@ async def download_all(start1):
 
 def coro_run():
     start1 = 0
-    while start1 < 4000:
+    while start1 < total:
         start1 = asyncio.run(download_all(start1))
 
 
@@ -52,3 +49,6 @@ if __name__ == '__main__':
 # 单个协程，并发500,爬取4000个网页，时间:25.521460569
 # 并发600,爬取4000个网页，时间:19.934549988
 # 协程并发超过500容易崩，达到最大请求并发 最大并发500 or 800 不稳定
+
+
+# await 同步调用：调用协程函数，执行完在继续后面

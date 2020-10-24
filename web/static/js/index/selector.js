@@ -11,7 +11,7 @@ var selector_ops = {
         this.eventBind();
     },
     eventBind:function(){
-        $("#nh_selector").click(function(){
+        $(document).on("click","#nh_selector",function(){
             var btn_target = $(this);
             $("#nh_selector").html("选股中，请稍等..");
             // if (btn_target.hasClass("disabled")){
@@ -27,23 +27,22 @@ var selector_ops = {
                         $("#nh_selector").html("粘合选股");
                         common_ops.alert("更新完成！");
                         // 刷新选股结果: 刷新选股结果div
-                        $("#ul_nh").innerHTML(res.html);
+                        $("#ul_nh").html(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        //selector_ops.init();
                     }
                     if(res.code == -1){
                         $("#nh_selector").html("粘合选股");
                         // 刷新选股结果: 刷新选股结果div
                         common_ops.alert("选股结果已更新！");
-                        $("#ul_nh").innerHTML(res.html);
+                        $("#ul_nh").html(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        //selector_ops.init();
                     }
                 }
             });
         });
-
-        $("#gold_cross_selector").click(function(){
+        $(document).on("click","#gold_cross_selector",function(){
             var btn_target = $(this);
             $("#gold_cross_selector").html("选股中，请稍等..");
             // if (btn_target.hasClass("disabled")){
@@ -59,9 +58,9 @@ var selector_ops = {
                         $("#gold_cross_selector").html("金叉选股");
                         // 刷新选股结果: 刷新选股结果div
                         common_ops.alert("更新完成！");
-                        $("#ul_gold_cross").innerHTML(res.html);
+                        $("#ul_gold_cross").html(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        //selector_ops.init();
                         // 点击完毕后，stock list监听点击取消
 
                     }
@@ -69,15 +68,14 @@ var selector_ops = {
                         $("#gold_cross_selector").html("金叉选股");
                         // 刷新选股结果: 刷新选股结果div
                         common_ops.alert("选股结果已更新！");
-                        $("#ul_gold_cross").innerHTML(res.html);
+                        $("#ul_gold_cross").html(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        //selector_ops.init();
                     }
                 }
             });
         });
-
-        $("#second_up_selector").click(function(){
+        $(document).on("click","#second_up_selector",function(){
             var btn_target = $(this);
             $("#second_up_selector").html("选股中，请稍等..");
             // if (btn_target.hasClass("disabled")){
@@ -93,94 +91,97 @@ var selector_ops = {
                         $("#second_up_selector").html("二次反弹");
                         // 刷新选股结果: 刷新选股结果div
                         common_ops.alert("更新完成！");
-                        $("#ul_second_up").innerHTML(res.html);
+                        $("#ul_second_up").html(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        //selector_ops.init();
                     }
                     if(res.code == -1){
                         $("#second_up_selector").html("二次反弹");
                         // 刷新选股结果: 刷新选股结果div
                         common_ops.alert("选股结果已更新！");
-                        $("#ul_second_up").innerHTML(res.html);
+                        $("#ul_second_up").html(res.html);
                         btn_target.removeClass('disabled');
-                        selector_ops.init();
+                        //selector_ops.init();
                     }
                 }
             });
         });
         // 点击移除持股列表:
-        $("#stock_list").ready(function(){
+        $(document).on("click","#stock_list",function() {
             // 持股列表检测点击： !如果没有选股结果， undefined error
             var obj_lis = $("#stock_list li span");
             var obj_trash = $("#stock_list li span i");
-            for(i=0;i<obj_lis.length;i++){
+            for (i = 0; i < obj_lis.length; i++) {
                 // 检测是否删除 ajax 本身是异步请求，请求时，i已经等于3
-                obj_trash[i].onclick = function(){
-                   symbol = $(this).parent().html().slice(52,61);
-                   var callback = {
-                        'ok':function(){
+                obj_trash[i].onclick = function () {
+                    symbol = $(this).parent().html().slice(52, 61);
+                    var callback = {
+                        'ok': function () {
                             $.ajax({
-                                url: common_ops.buildUrl( "/delete_list" ),
-                                async:false,
-                                type:'POST',
-                                data:{'symbol':symbol},
-                                dataType:'json',
-                                success:function( resp ){
+                                url: common_ops.buildUrl("/delete_list"),
+                                async: false,
+                                type: 'POST',
+                                data: {'symbol': symbol},
+                                dataType: 'json',
+                                success: function (resp) {
                                     $("#stock_list").html(resp.data);
-                                    selector_ops.init();
+                                    //selector_ops.init();
                                     // window.location.href = common_ops.buildUrl( "/" );
-                                 }
+                                }
                             });
                         },
-                        'cancel':null
-                   };
-                   common_ops.confirm("确定要将"+symbol+"从持股列表中移除吗？",callback);
+                        'cancel': null
+                    };
+                    common_ops.confirm("确定要将" + symbol + "从持股列表中移除吗？", callback);
                 }
-                obj_lis[i].onclick = function(){
+                obj_lis[i].onclick = function () {
                     // 获取5-13位
-                    var symbol = $(this).html().slice(52,61);
+                    var symbol = $(this).html().slice(52, 61);
                     var data = {
                         'symbol': symbol,
-                   };
-                   $.ajax({
-                        url: common_ops.buildUrl( "/search" ),
-                        async:false,
-                        type:'POST',
-                        data:data,
-                        dataType:'json',
-                        success:function( resp ){
-                            if(resp.code == 200){
+                    };
+                    $.ajax({
+                        url: common_ops.buildUrl("/search"),
+                        async: false,
+                        type: 'POST',
+                        data: data,
+                        dataType: 'json',
+                        success: function (resp) {
+                            if (resp.code == 200) {
                                 //window.location.href = common_ops.buildUrl( "/" );
                                 // 数据意义：开盘(open)，收盘(close)，最低(lowest)，最高(highest)
-                                  // 同一页面下js之间可以互相调用,这里调用plot_figure下的js
-                                  var read_data = resp.data0;
-                                  var data0 = splitData(read_data);
-                                  // 更新buy_price
-                                  buy_price = resp.buy_price
-                                  var myChart = echarts.init(document.getElementById('main'));
-                                  myChart.hideLoading();
-                                  option = setOption(data0,resp.name,resp.symbol);
-                                  myChart.setOption(option,true);
-                                  // 这里只更新了图，没有对价格栏进行更新:
-                                  var html = '';
-                                  sale_point = parseFloat(resp.sale_point);
-                                  if(buy_price){
-                                      buy_price = buy_price.toFixed(2);
-                                      goal_price = (buy_price*(100+sale_point)/100).toFixed(2);
-                                      html= "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"&nbsp;&nbsp;&nbsp;&nbsp;当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
-                                  }else{
-                                      html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
-                                  }
-                                  $("#price_holder").html(html);
-                                  //selector_ops.init();
+                                // 同一页面下js之间可以互相调用,这里调用plot_figure下的js
+                                var read_data = resp.data0;
+                                var data0 = splitData(read_data);
+                                // 更新buy_price
+                                buy_price = resp.buy_price
+                                var myChart = echarts.init(document.getElementById('main'));
+                                myChart.hideLoading();
+                                option = setOption(data0, resp.name, resp.symbol);
+                                myChart.setOption(option, true);
+                                // 这里只更新了图，没有对价格栏进行更新:
+                                var html = '';
+                                sale_point = parseFloat(resp.sale_point);
+                                if (buy_price) {
+                                    buy_price = buy_price.toFixed(2);
+                                    goal_price = (buy_price * (100 + sale_point) / 100).toFixed(2);
+                                    html = "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:" + buy_price + "&nbsp;&nbsp;&nbsp;&nbsp;目标价:" + goal_price + "&nbsp;&nbsp;&nbsp;&nbsp;当前卖点:" + sale_point + "%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
+                                } else {
+                                    html = "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:" + sale_point + "%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
+                                }
+                                $("#price_holder").html(html);
+                                //selector_ops.init();
                             }
-                            if(resp.code == -1){
+                            if (resp.code == -1) {
                                 common_ops.alert("股票代码错误，请输入正确的股票代码！");
                             }
-                         }
+                        }
                     });
                 }
             }
+        });
+
+        $(document).on("click",".selectorList",function(){
             // 选股结果列表检测点击:
             var obj_lis1 = $(".selectorList li span");
             var obj_add = $(".selectorList li i");
@@ -200,7 +201,7 @@ var selector_ops = {
                                       if(resp['code']==200){
                                          $("#stock_list").html(resp.data);
                                       }
-                                      selector_ops.init();
+                                      //selector_ops.init();
                                       //window.location.href = common_ops.buildUrl( "/" );
                                   }
                               });
@@ -246,7 +247,7 @@ var selector_ops = {
                                     html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
                                 }
                                 $("#price_holder").html(html);
-                                //selector_ops.init();
+                                // selector_ops.init();
                             }
                             if(resp.code == -1){
                                 common_ops.alert("股票代码错误，请输入正确的股票代码！");
@@ -257,8 +258,8 @@ var selector_ops = {
             }
         });
     }
-};
+}
 
-$(document).ready( function(){
+$(document).ready(function(){
     selector_ops.init();
-} );
+});
