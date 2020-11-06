@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67596828-4dfe-4e98-8853-512fe8822ab6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/service/business/load_rps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/business/send_win_lose_msg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tron_task/load_rps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/business/view_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/business/view_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/update_job.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controllers/compute/test/single coroutine.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/compute/test/single coroutine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/libs/Helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/libs/Helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/business/get_rps.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/business/get_rps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/controllers/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/js/index/selector.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/index/selector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/controllers/user/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/user/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/js/index/current_rps.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/index/current_rps.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/controllers/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="760" column="33" lean-forward="true" selection-start-line="760" selection-start-column="33" selection-end-line="760" selection-end-column="33" />
+            <state relative-caret-position="210">
+              <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
               <folding>
                 <element signature="e#24#38#0" expanded="true" />
               </folding>
@@ -31,10 +33,74 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/base/view.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-716">
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+              <folding>
+                <element signature="e#15#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/response_util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/business/gen_index_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
+              <folding>
+                <element signature="e#16#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/templates/index/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="31" column="27" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="27" />
+              <folding>
+                <element signature="e#1473#1479#0" expanded="true" />
+                <element signature="e#1508#1514#0" expanded="true" />
+                <element signature="e#1514#1520#0" expanded="true" />
+                <element signature="e#1520#1526#0" expanded="true" />
+                <element signature="e#1526#1532#0" expanded="true" />
+                <element signature="e#1553#1559#0" expanded="true" />
+                <element signature="e#1559#1565#0" expanded="true" />
+                <element signature="e#1565#1571#0" expanded="true" />
+                <element signature="e#1571#1577#0" expanded="true" />
+                <element signature="e#1653#1659#0" expanded="true" />
+                <element signature="e#1659#1665#0" expanded="true" />
+                <element signature="e#1665#1671#0" expanded="true" />
+                <element signature="e#1671#1677#0" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#nav#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/controllers/user/User.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+            <state relative-caret-position="266">
+              <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
               <folding>
                 <element signature="e#24#97#0" expanded="true" />
               </folding>
@@ -43,29 +109,69 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/interceptors/AuthInterceptor.py">
+        <entry file="file://$PROJECT_DIR$/web/templates/user/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="191">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask/app.py">
+        <entry file="file://$PROJECT_DIR$/common/libs/Helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="2445" selection-start-line="2445" selection-end-line="2445" />
+            <state relative-caret-position="341">
+              <caret line="57" column="3" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/templates/user/edit.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/tron_task/load_rps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+              <folding>
+                <element signature="e#66#105#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/business/load_rps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/business/get_rps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="e#15#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/business/send_win_lose_msg.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
+              <folding>
+                <element signature="e#15#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -80,10 +186,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rps</find>
-      <find>price_holder</find>
-      <find>search_stock</find>
-      <find>post</find>
       <find>ul_gold_cross</find>
       <find>dele</find>
       <find>search</find>
@@ -108,8 +210,12 @@
       <find>coroutine_num</find>
       <find>before_request</find>
       <find>current_user</find>
-      <find>GlobalVar</find>
       <find>g.</find>
+      <find>GlobalVar</find>
+      <find>global_dict</find>
+      <find>before_reque</find>
+      <find>send</find>
+      <find>rps</find>
     </findStrings>
     <replaceStrings>
       <replace>stocklab.ex.system_error</replace>
@@ -124,9 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application.py" />
-        <option value="$PROJECT_DIR$/manager.py" />
-        <option value="$PROJECT_DIR$/config/local_setting.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/web/controllers/compute/Predict.py" />
@@ -148,7 +251,6 @@
         <option value="$PROJECT_DIR$/common/str.py" />
         <option value="$PROJECT_DIR$/web/templates/index/partials/footer.html" />
         <option value="$PROJECT_DIR$/service/business/get_history_by_page.py" />
-        <option value="$PROJECT_DIR$/common/libs/Helper.py" />
         <option value="$PROJECT_DIR$/common/models/UserPage.py" />
         <option value="$PROJECT_DIR$/web/static/js/index/history_table.js" />
         <option value="$PROJECT_DIR$/web/controllers/compute/ComputeIndex.py" />
@@ -157,30 +259,36 @@
         <option value="$PROJECT_DIR$/common/global_var.py" />
         <option value="$PROJECT_DIR$/web/templates/index/partials/header.html" />
         <option value="$PROJECT_DIR$/web/static/css/index.css" />
-        <option value="$PROJECT_DIR$/service/business/get_rps.py" />
         <option value="$PROJECT_DIR$/web/static/js/index/add_stock.js" />
         <option value="$PROJECT_DIR$/service/business/gen_index_data.py" />
         <option value="$PROJECT_DIR$/web/static/js/strategy/strategy.js" />
-        <option value="$PROJECT_DIR$/web/static/js/index/current_rps.js" />
         <option value="$PROJECT_DIR$/web/static/js/index/current_price.js" />
         <option value="$PROJECT_DIR$/web/static/js/index/search_ops.js" />
         <option value="$PROJECT_DIR$/web/static/js/index/set_sale_point.js" />
         <option value="$PROJECT_DIR$/service/business/view_utils.py" />
-        <option value="$PROJECT_DIR$/web/controllers/index.py" />
         <option value="$PROJECT_DIR$/web/templates/index/index.html" />
         <option value="$PROJECT_DIR$/web/static/js/index/index.js" />
         <option value="$PROJECT_DIR$/web/static/js/index/selector.js" />
         <option value="$PROJECT_DIR$/web/controllers/compute/test/single coroutine.py" />
         <option value="$PROJECT_DIR$/update_job.py" />
         <option value="$PROJECT_DIR$/web/base/stocklab_request.py" />
+        <option value="$PROJECT_DIR$/service/business/send_win_or_lose_msg.py" />
+        <option value="$PROJECT_DIR$/tron_task/send_win_lose_msg.py" />
+        <option value="$PROJECT_DIR$/service/business/send_win_lose_msg.py" />
+        <option value="$PROJECT_DIR$/service/business/get_rps.py" />
+        <option value="$PROJECT_DIR$/web/static/js/index/current_rps.js" />
+        <option value="$PROJECT_DIR$/common/libs/Helper.py" />
+        <option value="$PROJECT_DIR$/web/controllers/user/User.py" />
+        <option value="$PROJECT_DIR$/tron_task/load_rps.py" />
+        <option value="$PROJECT_DIR$/web/controllers/index.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-59" />
-    <option name="y" value="24" />
-    <option name="width" value="1578" />
-    <option name="height" value="829" />
+    <option name="x" value="-923" />
+    <option name="y" value="-984" />
+    <option name="width" value="1371" />
+    <option name="height" value="888" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -188,7 +296,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,61 +306,18 @@
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7" type="462c0819:PsiDirectoryNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7" type="462c0819:PsiDirectoryNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="flask" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7" type="462c0819:PsiDirectoryNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="werkzeug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="python3.7" type="462c0819:PsiDirectoryNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="werkzeug" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
+              <item name="tron_task" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
@@ -277,21 +341,6 @@
               <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="compute" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="compute" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -302,121 +351,18 @@
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stocklab2_new_2" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="70582d5e:PySkeletonsNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
               <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="flask" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="flask_script" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="mysql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="mysql" type="462c0819:PsiDirectoryNode" />
-              <item name="connector" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="mysql" type="462c0819:PsiDirectoryNode" />
-              <item name="connector" type="462c0819:PsiDirectoryNode" />
-              <item name="fabric" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="sqlalchemy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="sqlalchemy" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="werkzeug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="845680817" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="werkzeug" type="462c0819:PsiDirectoryNode" />
-              <item name="wrappers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
@@ -424,14 +370,6 @@
               <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
               <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
               <item name="-1506120976" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-            </path>
-            <path>
-              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
-              <item name="-1506120976" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
-              <item name="asyncio" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
@@ -441,10 +379,19 @@
               <item name="-1506120976" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
               <item name="logging" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="stocklab2_new_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Remote Python 3.7.4 (sftp://root@182.92.226.104:22/stocklab2_new_2/venv/bin/python3) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="-239631958" type="d76c9d6b:PyRemoteLibrariesNode" />
+              <item name="-1506120976" type="788ab980:PyRemoteLibrariesNode$PyRemoteRootNode" />
+              <item name="urllib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,7 +402,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/service/business" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -471,11 +418,11 @@
       <recent name="$PROJECT_DIR$/common/enums" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service/business" />
+      <recent name="$PROJECT_DIR$/tron_task" />
       <recent name="$PROJECT_DIR$/web/static/js/index" />
       <recent name="$PROJECT_DIR$/common/models" />
       <recent name="$PROJECT_DIR$/web/static/js" />
-      <recent name="$PROJECT_DIR$/web/static" />
-      <recent name="$PROJECT_DIR$/web/templates/index" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -505,6 +452,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/utils/date_util.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="load_rps" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="stocklab2_new_2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tron_task" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tron_task/load_rps.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -580,18 +549,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.manager" />
-      <item itemvalue="Python.update_job" />
       <item itemvalue="Python.date_util" />
+      <item itemvalue="Python.manager" />
       <item itemvalue="Python.single coroutine" />
+      <item itemvalue="Python.update_job" />
+      <item itemvalue="Python.load_rps" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.load_rps" />
         <item itemvalue="Python.manager" />
         <item itemvalue="Python.single coroutine" />
         <item itemvalue="Python.update_job" />
         <item itemvalue="Python.date_util" />
-        <item itemvalue="Python.manager" />
       </list>
     </recent_temporary>
   </component>
@@ -639,34 +609,38 @@
       <workItem from="1603191675365" duration="41000" />
       <workItem from="1603337827791" duration="485000" />
       <workItem from="1603371954595" duration="181000" />
-      <workItem from="1603539994666" duration="5949000" />
+      <workItem from="1603539994666" duration="6345000" />
+      <workItem from="1604119433544" duration="14282000" />
+      <workItem from="1604284283837" duration="85000" />
+      <workItem from="1604325393467" duration="2393000" />
+      <workItem from="1604662135820" duration="1050000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159573000" />
+    <option name="totallyTimeSpent" value="177779000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-59" y="24" width="1578" height="829" extended-state="0" />
+    <frame x="-923" y="-984" width="1371" height="888" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18164062" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22121896" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33193862" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49958643" weight="0.44957983" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4553687" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49958643" weight="0.37645537" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32823366" />
-      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49963045" weight="0.2114846" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49963045" weight="0.2225097" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49958643" visible="true" weight="0.30812326" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49958643" visible="true" weight="0.30530402" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50041354" side_tool="true" weight="0.52387094" />
-      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4987593" weight="0.40813464" />
+      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4987593" weight="0.32470894" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -757,6 +731,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/web/controllers/index.py</url>
+          <line>573</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -769,7 +750,8 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/stocklab2_new_2$single_coroutine.coverage" NAME="single coroutine Coverage Results" MODIFIED="1603165862683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web/controllers/compute/test" />
     <SUITE FILE_PATH="coverage/stocklab2_new_2$update_job.coverage" NAME="update_job Coverage Results" MODIFIED="1603113867130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/stocklab2_new_2$manager.coverage" NAME="manager Coverage Results" MODIFIED="1603545558596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stocklab2_new_2$manager.coverage" NAME="manager Coverage Results" MODIFIED="1604326554485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stocklab2_new_2$load_rps.coverage" NAME="load_rps Coverage Results" MODIFIED="1604327050106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tron_task" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -819,89 +801,35 @@
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
     </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>GlobalVar.global_dict</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>global_dict = GlobalVar.global_dict</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>global_dict</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rps_day, rps_week, rps_month = GetRps().get_rps(symbol)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>logging.getLogger('load_rps').info('21')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/mysql/connector/fabric/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="1513" column="8" selection-start-line="1513" selection-start-column="8" selection-end-line="1513" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/-1506120976/asyncio/tasks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="344" column="4" selection-start-line="344" selection-start-column="4" selection-end-line="344" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/test/multithread coroutine scrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/Predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-          <folding>
-            <element signature="e#147#198#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/compute/RpsComputeIndex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/index/partials/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/base/view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#15#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/static.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/static/js/account/set.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1333" />
@@ -911,27 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="62">
           <caret line="404" column="8" selection-start-line="404" selection-start-column="8" selection-end-line="404" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/history_table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-692">
-          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business/get_rps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-430">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business/get_history_by_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -948,16 +855,6 @@
           <caret line="473" column="38" selection-start-line="473" selection-start-column="29" selection-end-line="473" selection-end-column="38" />
           <folding>
             <element signature="e#79#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business/gen_index_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-773">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="34" />
-          <folding>
-            <element signature="e#16#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1043,20 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/current_price.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/static/js/index/current_rps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/static/js/index/search_ops.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
@@ -1075,42 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="52" column="42" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="42" />
-          <folding>
-            <element signature="e#1473#1479#0" expanded="true" />
-            <element signature="e#1508#1514#0" expanded="true" />
-            <element signature="e#1514#1520#0" expanded="true" />
-            <element signature="e#1520#1526#0" expanded="true" />
-            <element signature="e#1526#1532#0" expanded="true" />
-            <element signature="e#1553#1559#0" expanded="true" />
-            <element signature="e#1559#1565#0" expanded="true" />
-            <element signature="e#1565#1571#0" expanded="true" />
-            <element signature="e#1571#1577#0" expanded="true" />
-            <element signature="e#1653#1659#0" expanded="true" />
-            <element signature="e#1659#1665#0" expanded="true" />
-            <element signature="e#1665#1671#0" expanded="true" />
-            <element signature="e#1671#1677#0" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#nav#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business/view_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1168,27 +1015,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/global_var.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding>
-            <element signature="e#15#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/845680817/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="437" column="13" selection-start-line="437" selection-start-column="13" selection-end-line="437" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update_job.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1198,9 +1028,6 @@
           <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/user/edit.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/web/controllers/compute/GetData.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1213,23 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="304" selection-start-line="304" selection-end-line="304" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="2445" selection-start-line="2445" selection-end-line="2445" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/interceptors/AuthInterceptor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1251,20 +1061,221 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45334">
+          <caret line="2445" selection-start-line="2445" selection-end-line="2445" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business/send_win_or_lose_msg.py" />
+    <entry file="file://$PROJECT_DIR$/service/business/get_history_by_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tron_task/send_win_lose_msg.py" />
+    <entry file="file://$PROJECT_DIR$/service/business/view_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/-1506120976/urllib/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="128" column="33" lean-forward="true" selection-start-line="128" selection-start-column="33" selection-end-line="128" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/remote_sources/-239631958/-1506120976/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="1980" column="4" selection-start-line="1980" selection-start-column="4" selection-end-line="1980" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_job.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1098">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding>
+            <element signature="e#51#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/user/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/libs/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business/send_win_lose_msg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#15#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business/gen_index_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
+          <folding>
+            <element signature="e#16#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/js/index/current_price.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/js/index/history_table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/interceptors/AuthInterceptor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/global_var.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding>
+            <element signature="e#15#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/controllers/user/User.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+        <state relative-caret-position="266">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding>
             <element signature="e#24#97#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/js/index/current_rps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="27" />
+          <folding>
+            <element signature="e#1473#1479#0" expanded="true" />
+            <element signature="e#1508#1514#0" expanded="true" />
+            <element signature="e#1514#1520#0" expanded="true" />
+            <element signature="e#1520#1526#0" expanded="true" />
+            <element signature="e#1526#1532#0" expanded="true" />
+            <element signature="e#1553#1559#0" expanded="true" />
+            <element signature="e#1559#1565#0" expanded="true" />
+            <element signature="e#1565#1571#0" expanded="true" />
+            <element signature="e#1571#1577#0" expanded="true" />
+            <element signature="e#1653#1659#0" expanded="true" />
+            <element signature="e#1659#1665#0" expanded="true" />
+            <element signature="e#1665#1671#0" expanded="true" />
+            <element signature="e#1671#1677#0" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#nav#0;n#div#0;n#div#5;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/response_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/libs/Helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="57" column="3" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tron_task/load_rps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding>
+            <element signature="e#66#105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/base/view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-716">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="e#15#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business/get_rps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#15#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business/load_rps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/controllers/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="760" column="33" lean-forward="true" selection-start-line="760" selection-start-column="33" selection-end-line="760" selection-end-column="33" />
+        <state relative-caret-position="210">
+          <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
           </folding>

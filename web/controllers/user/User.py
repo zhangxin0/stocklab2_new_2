@@ -6,10 +6,12 @@ from common.libs.user.UserService import UserService
 import json
 from application import app, db
 from common.libs.UrlManager import UrlManager
+from web.base.view import restful
 
 route_user = Blueprint('user_page', __name__)
 
 @route_user.route("/login", methods=["GET", "POST"])
+@restful
 def login():
     if request.method == "GET":
         return ops_render("user/login.html")
@@ -43,11 +45,13 @@ def login():
     return response
 
 @route_user.route("/register", methods=["GET"])
+@restful
 def register():
     return ops_render("user/register.html")
 
 
 @route_user.route("/edit", methods=["GET", "POST"])
+@restful
 def edit():
     if request.method == "GET":
         return ops_render("user/edit.html")
@@ -77,6 +81,7 @@ def edit():
 
 
 @route_user.route("/register_submit", methods=["POST"])
+@restful
 def register_submit():
     resp = {'code': 200, 'msg': 'Login Success!', 'data': {}}
     req = request.values
@@ -106,6 +111,7 @@ def register_submit():
     return response
 
 @route_user.route("/reset-pwd", methods=["GET", "POST"])
+@restful
 def resetPwd():
     if request.method == "GET":
         return ops_render("user/reset_pwd.html")
@@ -129,6 +135,7 @@ def resetPwd():
 
 
 @route_user.route('/logout')
+@restful
 def logout():
     response = make_response(redirect(UrlManager.buildUrl('/user/login')))
     response.delete_cookie(app.config['AUTH_COOKIE_NAME'])
