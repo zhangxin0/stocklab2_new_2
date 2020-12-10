@@ -28,8 +28,6 @@ from service.business.gen_index_data import GenIndexDataService
 from common.models.UserPage import UserPage
 from service.business.get_rps import GetRps
 from common.global_var import GlobalVar
-from service.business.load_rps import LoadRps
-
 route_index = Blueprint('index_page', __name__)
 global_dict = GlobalVar.global_dict
 # 可以在内存中维持一个用户临时信息的dict，保存用户当前状态
@@ -37,8 +35,6 @@ global_dict = GlobalVar.global_dict
 @route_index.route("/", methods=["GET", "POST"])
 @restful
 def index():
-    # 请求前，先加载rds数据:
-    LoadRps().load_rps()
     resp_data = GenIndexDataService.get_resp_data(request_method=request.method)
     if request.method == 'POST':
         return resp_data
@@ -93,7 +89,7 @@ def nh_predict():
     prices = []
     names = []
     # 选股结果最新 -- 不需要更新：
-    if result_date and result_date >= db_date:
+    if result_date and result_date >= db_date and not (datetime.datetime.now().hour>=14):
         count = 0
         resp['code'] = -1
         for item in result:
@@ -115,6 +111,10 @@ def nh_predict():
     else:
         # res 格式 [(symbol, computeIndex, cur),(symbol,.,.),...,...]
         res = Predict.predict(0, 'nh')
+        # 14：30之后，每次执行，清除已选结果：
+        res_date = datetime.datetime.now().date().strftime("%Y%m%d")
+        db.session.query(NhResult).filter(NhResult.date == res_date).delete()
+        db.session.flush()
         count = 0
         for item in res:
             count += 1
@@ -204,8 +204,8 @@ def gold_cross_predict():
     symbols = []
     prices = []
     names = []
-    # 选股结果最新 -- 不需要更新：
-    if result_date and result_date >= db_date:
+    # 选股结果最新 -- 不需要更新（14：30之前，因为库表在14:30之后更新）：
+    if result_date and result_date >= db_date and not (datetime.datetime.now().hour>=14):
         count = 0
         resp['code'] = -1
         # 如果选股结果为空 -- 提示今天没有选股 date:20200719 symbol: prices: names:
@@ -226,6 +226,10 @@ def gold_cross_predict():
     else:
         # res 格式 [(symbol, computeIndex, cur),(symbol,.,.),...,...]
         res = Predict.predict(0, 'gold_cross')
+        # 14：30之后，每次执行，清除已选结果：
+        res_date = datetime.datetime.now().date().strftime("%Y%m%d")
+        db.session.query(GoldCrossResult).filter(GoldCrossResult.date == res_date).delete()
+        db.session.flush()
         count = 0
         for item in res:
             count += 1
@@ -301,7 +305,7 @@ def second_up_predict():
     prices = []
     names = []
     # 选股结果最新 -- 不需要更新：
-    if result_date and result_date >= db_date:
+    if result_date and result_date >= db_date and not (datetime.datetime.now().hour>=14):
         count = 0
         resp['code'] = -1
         for item in result:
@@ -322,6 +326,10 @@ def second_up_predict():
     else:
         # res 格式 [(symbol, computeIndex, cur),(symbol,.,.),...,...]
         res = Predict.predict(0, 'second_up')
+        # 14：30之后，每次执行，清除已选结果：
+        res_date = datetime.datetime.now().date().strftime("%Y%m%d")
+        db.session.query(SecondUpResult).filter(SecondUpResult.date == res_date).delete()
+        db.session.flush()
         count = 0
         for item in res:
             count += 1
@@ -418,6 +426,12 @@ def search():
         resp['name'] = data[0].name
         resp['symbol'] = data[0].symbol
         resp['sale_point'] = sale_point
+        # rps html:
+        rps_day, rps_week, rps_month = GetRps().get_rps(symbol,history=True)
+        # rps_html = f"&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):{rps_day['rps']} ({rps_day['rank']}/{rps_day['num']})&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):{rps_week['rps']}({rps_week['rank']}) &nbsp;&nbsp;&nbsp;&nbsp;RPS(M):{rps_month['rps']}({rps_month['rank']})</h2>"
+        resp['rps_day'] = rps_day
+        resp['rps_week'] = rps_week
+        resp['rps_month'] = rps_month
     return jsonify(resp)
 
 
@@ -553,7 +567,7 @@ def get_price():
     hdr = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'}
     req = urllib.request.Request(urlData, headers=hdr)
     webURL = urllib.request.urlopen(req)
-    # “股票名称、今日开盘价、昨日收盘价、当前价格、今日最高价、今日最低价..
+    # “股票名称、今日开盘价、昨日收盘价、当前价格、今日最高价、今日最低价..成交量股（[8], /100 --> db）
     price = webURL.read().decode('latin-1').split('=')[1].split(',')[3]
     # 保留2位小数
     price = price[:-1]
@@ -586,7 +600,7 @@ def get_strategy():
     hold_list = UserInfo.query.filter_by(user_id=g.current_user.uid).all()
     phone = User.query.filter_by(uid=g.current_user.uid).first().mobile
     # 盈利位，止损位
-    prevent_lose = 10
+    prevent_lose = 4.5
     resp = {'code': -1, 'msg': 'success', 'data': '', 'phone': '', 'symbol': '', 'operation': ''}
     resp['phone'] = phone
     for element in hold_list:

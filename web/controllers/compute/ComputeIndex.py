@@ -7,6 +7,7 @@ Alert ***
 """
 
 import numpy as np
+import logging
 from web.controllers.compute.common.ReadDb import ReadDb
 
 
@@ -172,14 +173,15 @@ class ComputeIndex():
             res = False
         return res
 
-    # 前一天的收盘价高于前一天1%以上 并且当天最高价>0.5%
+    # 前一天的收盘价高于前2天1%以上 并且当天最高价>0%(上涨） 第二天以0.5%的价格买入
     def close_high(self):
         res = False
-        rate = (self.train_close[0] - self.train_close[1]) / self.train_close[1] * 100
+        rate = (self.train_close[1] - self.train_close[2]) / self.train_close[2] * 100
+        rate_today = (self.train_high[0] - self.train_close[1]) / self.train_close[1] * 100
         # 实盘中没有以下，回测使用，实盘人为判断是否买入，涨到0.5%
         # rate_buy = (self.test_high[-1] - self.train_close[0]) / self.train_close[0] * 100
         # if rate >= 1 and rate_buy >= 0.5:
-        if rate >= 1:
+        if rate >= 1 and rate_today >= 0:
             res = True
         return res
 
@@ -203,11 +205,11 @@ class ComputeIndex():
             rate = (self.train_close[i] - self.train_close[i + 1]) / self.train_close[i + 1] * 100
             if rate >= 9.9:
                 # 最低价不跌破第一个涨停的开盘价
-                 min_start = self.train_open[i]
-                # 改最低价不跌破第一个涨停前一日的最高价
-                # min_start = self.train_high[i + 1]
-                # if min_start < self.train_open[i]:
-                #     min_start = self.train_open[i]
+                min_start = self.train_open[i]
+            # 改最低价不跌破第一个涨停前一日的最高价
+            # min_start = self.train_high[i + 1]
+            # if min_start < self.train_open[i]:
+            #     min_start = self.train_open[i]
         if min <= min_start:
             res = False
         return res
@@ -460,7 +462,9 @@ class ComputeIndex():
         return w1 and w2 and w3
 
     def select(self):
-        if len(self.train_close) < 70:
+        # 短期内停过牌的股票，暂时不考虑进入：
+        if len(self.train_close)< 70 or 0 in self.train_close[:32]:
+            print(self.symbol)
             return False
         # re-define thredshold by more data
         if self.option == 'gold_cross':

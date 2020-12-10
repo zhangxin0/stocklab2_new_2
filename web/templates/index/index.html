@@ -29,7 +29,7 @@
         {% if buy_price %}
         <h2 id="goal_price"> &nbsp;&nbsp;&nbsp;&nbsp;买入价:{{buy_price}}&nbsp;&nbsp;&nbsp;&nbsp;目标价:{{ goal_price }} &nbsp;&nbsp;&nbsp;&nbsp;当前卖点: {{sale_point}}%</h2>
         {% endif %}
-        <h2 id="current_rps">&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>
+        &nbsp;&nbsp;&nbsp;&nbsp;<h2 id="current_rps"> RPS(D):{{rps_day['rps']}} ({{rps_day['rank']}}/{{rps_day['num']}})&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):{{rps_week['rps']}}({{rps_week['rank']}}) &nbsp;&nbsp;&nbsp;&nbsp;RPS(M):{{rps_month['rps']}}({{rps_month['rank']}})</h2>
     </div>
     <div class="form-inline" id="set_sale_point_div">
         <h2 id="sale_point"> &nbsp;&nbsp;&nbsp;自定义卖点:&nbsp;&nbsp;</h2><input class="form-control" type="text" name="set_sale_point" style="height:25px;width:20%;font-size:16px;" placeholder="所持股票达到卖点，短信提醒">&nbsp;%

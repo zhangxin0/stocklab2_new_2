@@ -165,9 +165,9 @@ var selector_ops = {
                                 if (buy_price) {
                                     buy_price = buy_price.toFixed(2);
                                     goal_price = (buy_price * (100 + sale_point) / 100).toFixed(2);
-                                    html = "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:" + buy_price + "&nbsp;&nbsp;&nbsp;&nbsp;目标价:" + goal_price + "&nbsp;&nbsp;&nbsp;&nbsp;当前卖点:" + sale_point + "%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
+                                    html = "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:" + buy_price + "&nbsp;&nbsp;&nbsp;&nbsp;目标价:" + goal_price + "&nbsp;&nbsp;&nbsp;&nbsp;当前卖点:" + sale_point + "%</h2>" + "&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):" + resp.rps_day['rps']+ "(" + resp.rps_day['rank']+ "/" +resp.rps_day['num'] + ")&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):"+resp.rps_week['rps']+"("+ resp.rps_week['rank']+")&nbsp;&nbsp;&nbsp;&nbsp;RPS(M):"+resp.rps_month['rps']+"("+resp.rps_month['rank']+")</h2>";
                                 } else {
-                                    html = "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:" + sale_point + "%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
+                                    html = "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:" + sale_point + "%</h2>" + "&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):" + resp.rps_day['rps']+ "(" + resp.rps_day['rank']+ "/" +resp.rps_day['num'] + ")&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):"+resp.rps_week['rps']+"("+ resp.rps_week['rank']+")&nbsp;&nbsp;&nbsp;&nbsp;RPS(M):"+resp.rps_month['rps']+"("+resp.rps_month['rank']+")</h2>";
                                 }
                                 $("#price_holder").html(html);
                                 //selector_ops.init();
@@ -242,9 +242,9 @@ var selector_ops = {
                                 if(buy_price){
                                     buy_price = buy_price.toFixed(2);
                                     goal_price = (buy_price*(100+sale_point)/100).toFixed(2);
-                                    html= "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"&nbsp;&nbsp;&nbsp;&nbsp;当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
+                                    html= "<h2 id='current_price'>当前价:----</h2>" + "<h2 id='goal_price'> &nbsp;&nbsp;&nbsp;&nbsp;买入价:"+buy_price+"&nbsp;&nbsp;&nbsp;&nbsp;目标价:"+goal_price+"&nbsp;&nbsp;&nbsp;&nbsp;当前卖点:"+sale_point+"%</h2>" + "&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):" + resp.rps_day['rps']+ "(" + resp.rps_day['rank']+ "/" +resp.rps_day['num'] + ")&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):"+resp.rps_week['rps']+"("+ resp.rps_week['rank']+")&nbsp;&nbsp;&nbsp;&nbsp;RPS(M):"+resp.rps_month['rps']+"("+resp.rps_month['rank']+")</h2>";
                                 }else{
-                                    html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "<h2 id='current_rps'>&nbsp;&nbsp;&nbsp;&nbsp;RPS:更新中(每90 s)...</h2>";
+                                    html= "<h2 id='current_price'>当前价:----</h2>"+"<h2 id='sale_point'>&nbsp;&nbsp;&nbsp;&nbsp; 当前卖点:"+sale_point+"%</h2>" + "&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):" + resp.rps_day['rps']+ "(" + resp.rps_day['rank']+ "/" +resp.rps_day['num'] + ")&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):"+resp.rps_week['rps']+"("+ resp.rps_week['rank']+")&nbsp;&nbsp;&nbsp;&nbsp;RPS(M):"+resp.rps_month['rps']+"("+resp.rps_month['rank']+")</h2>";
                                 }
                                 $("#price_holder").html(html);
                                 // selector_ops.init();

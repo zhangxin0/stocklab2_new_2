@@ -12,7 +12,7 @@ function clock_rps(){
     });
 }
 
-setInterval(clock_rps,0.1*60000);//动态更新时间
+setInterval(clock_rps,6*60000);//动态更新时间
 
 
 

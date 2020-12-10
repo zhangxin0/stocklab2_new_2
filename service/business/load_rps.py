@@ -54,7 +54,9 @@ class LoadRps(object):
                     # 保留2位小数
                     price = float(price[:-1])
 
-                    # 如果价格没有变化，采用昨天的数据
+                    # 如果价格没有变化，采用昨天的数据 bug: close[1]=0, reason:个别symbol最近采集到的收盘价为0，可能是退市
+                    if 0 in close[:22]:
+                        continue
                     rps_close_day = (price - close[1])/close[1]  # cur_price - 昨日收盘价
 
                     rps_close_week = (price - close[4])/close[4]
@@ -66,9 +68,10 @@ class LoadRps(object):
                     result_week[symbol] = rps_close_week
                     result_month[symbol] = rps_close_month
 
-            sort_list_day = sorted(result_day.items(),key=lambda item:item[1])
-            sort_list_week = sorted(result_week.items(), key=lambda item: item[1])
-            sort_list_month = sorted(result_month.items(), key=lambda item: item[1])
+            # 降序排列，涨幅高的，rank 低，排名靠前
+            sort_list_day = sorted(result_day.items(),key=lambda item:-item[1])
+            sort_list_week = sorted(result_week.items(), key=lambda item: -item[1])
+            sort_list_month = sorted(result_month.items(), key=lambda item: -item[1])
 
             global_dict[f'result_day_{sign}'] = result_day
             global_dict[f'result_week_{sign}'] = result_week

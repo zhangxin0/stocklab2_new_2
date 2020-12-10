@@ -10,6 +10,7 @@ from common.models.StockInfo import StockInfo
 from common.models.GoldCrossResult import GoldCrossResult
 from common.models.SecondUpResult import SecondUpResult
 from common.global_var import GlobalVar
+from service.business.get_rps import GetRps
 
 class GenIndexDataService(object):
     global_dict = GlobalVar.global_dict
@@ -37,7 +38,6 @@ class GenIndexDataService(object):
             second_up_result_list = SecondUpResult.query.filter_by(date=db_date).all() or []
 
             data = StockInfo.query.filter_by(symbol=symbol).order_by(StockInfo.trade_date).all()
-            data0 = []
             data0 = []
             for element in data:
                 # 数据意义：trade_date,开盘(open)，收盘(close)，最低(lowest)，最高(highest)
@@ -121,6 +121,13 @@ class GenIndexDataService(object):
             if find_obj:
                 resp_data['buy_price'] = round(find_obj.buy_price, 2)
                 resp_data['goal_price'] = round(find_obj.buy_price * (100+sale_point)/100, 2)
+            # rps html:
+            rps_day, rps_week, rps_month = GetRps().get_rps(symbol,history=True)
+            resp_data['rps_day'] = rps_day
+            resp_data['rps_week'] = rps_week
+            resp_data['rps_month'] = rps_month
+            rps_html = f"&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):{rps_day['rps']} ({rps_day['rank']}/{rps_day['num']})&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):{rps_week['rps']}({rps_week['rank']}) &nbsp;&nbsp;&nbsp;&nbsp;RPS(M):{rps_month['rps']}({rps_month['rank']})</h2>"
+            resp_data['html'] = rps_html
         except Exception as e:
             app.logger.error(e)
         return resp_data

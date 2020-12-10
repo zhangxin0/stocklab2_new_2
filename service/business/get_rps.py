@@ -23,14 +23,14 @@ class GetRps(object):
         price = float(price[:-1])
         return price
 
-    def get_rps(self, stock):
+    def get_rps(self, stock, history=False):
         # 如果未开市，则返回内存储存的value:
         stock_price = self.get_price(stock)
         stock_close = GlobalVar.close_21_dict[stock]
         global_dict = GlobalVar.global_dict
         sign = stock[0]
 
-        if stock_price == stock_close[0]:
+        if stock_price == stock_close[0] or history:
             rank_day = global_dict[f'rds_day_list_{sign}'].index((stock,global_dict[f'result_day_{sign}'][stock]))
             rank_week = global_dict[f'rds_week_list_{sign}'].index((stock,global_dict[f'result_week_{sign}'][stock]))
             rank_month = global_dict[f'rds_month_list_{sign}'].index((stock,global_dict[f'result_month_{sign}'][stock]))
@@ -47,12 +47,16 @@ class GetRps(object):
         result_month = {}
         sign = stock[0]
         for symbol in symbols:
+            # rps：当前价格相对前一天的收盘价。收市后，close[0]更新为当天，不做rps更新。
             if symbol[0] == sign:
                 # 可以把每只股票的computeIndex都加载到内存中（5-10MB）
                 # computeIndex = ComputeIndex(symbol, 0, None)
                 close = GlobalVar.close_21_dict[symbol]
                 # get price for symbol
-                price = self.get_rps(symbol)
+                price = self.get_price(symbol)
+                # 如果价格没有变化，采用昨天的数据 bug: close[1]=0, reason:个别symbol最近采集到的收盘价为0，可能是退市
+                if 0 in close[:22]==0:
+                    continue
                 rps_close_day = (price - close[0])/close[0]  # cur_price - 昨日收盘价
                 rps_close_week = (price - close[4])/close[4]
                 rps_close_month = (price - close[21])/close[21]
@@ -61,9 +65,9 @@ class GetRps(object):
                 result_week[symbol] = rps_close_week
                 result_month[symbol] = rps_close_month
 
-        sort_list_day = sorted(result_day.items(), key=lambda item: item[1])
-        sort_list_week = sorted(result_week.items(), key=lambda item: item[1])
-        sort_list_month = sorted(result_month.items(), key=lambda item: item[1])
+        sort_list_day = sorted(result_day.items(), key=lambda item: -item[1])
+        sort_list_week = sorted(result_week.items(), key=lambda item: -item[1])
+        sort_list_month = sorted(result_month.items(), key=lambda item: -item[1])
 
         global_dict[f'result_day_{sign}'] = result_day
         global_dict[f'result_week_{sign}'] = result_week
