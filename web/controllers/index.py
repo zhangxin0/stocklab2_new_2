@@ -204,7 +204,7 @@ def gold_cross_predict():
     symbols = []
     prices = []
     names = []
-    # 选股结果最新 -- 不需要更新（14：30之前，因为库表在14:30之后更新）：
+    # 选股结果最新 -- 不需要更新（14：00之前，因为库表在14:00之后更新）：
     if result_date and result_date >= db_date and not (datetime.datetime.now().hour>=14):
         count = 0
         resp['code'] = -1

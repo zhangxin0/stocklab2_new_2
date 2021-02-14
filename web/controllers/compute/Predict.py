@@ -41,6 +41,6 @@ def predict(cur,option):
     return res
 
 
-#print(predict(0))
+# print(predict(0, 'up_limit_failed'))
 
 #print(predict(3,'second_up'))

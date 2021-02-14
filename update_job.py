@@ -117,11 +117,11 @@ class Update():
         scheduler.add_job(self.predict_gold_cross, 'cron', hour=18, minute=20)
         scheduler.add_job(self.predict_second_up, 'cron', hour=18, minute=30)
         # 下午14：30 开始，更新数据库，预测出收盘价=cur_price和成交量=cur_vol*1.125:
-        scheduler.add_job(self.update_pre, 'cron', hour=14, minute=30)
-        # 14:40 前选出当天的股票:
-        scheduler.add_job(self.predict_nh_pre, 'cron', hour=14, minute=35)
-        scheduler.add_job(self.predict_gold_cross_pre, 'cron', hour=14, minute=35)
-        scheduler.add_job(self.predict_second_up_pre, 'cron', hour=14, minute=35)
+        # scheduler.add_job(self.update_pre, 'cron', hour=14, minute=30)
+        # 14:40 前选出当天的股票: 周末or节假日虽然该接口现实昨天的值，会影响计算结果。
+        # scheduler.add_job(self.predict_nh_pre, 'cron', hour=14, minute=35)
+        # scheduler.add_job(self.predict_gold_cross_pre, 'cron', hour=14, minute=35)
+        # scheduler.add_job(self.predict_second_up_pre, 'cron', hour=14, minute=35)
 
         try:
             scheduler.start()
@@ -132,7 +132,5 @@ class Update():
 if __name__ == '__main__':
     update = Update()
     update.main()
+    # update.update_pre()
     # update.update()
-    # update.predict_nh()
-    # update.predict_gold_cross()
-    # update.predict_second_up()

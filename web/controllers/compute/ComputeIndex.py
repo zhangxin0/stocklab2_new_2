@@ -123,6 +123,7 @@ class ComputeIndex():
         #     if self.train_low[i] < min_price:
         #         min_price = self.train_low[i]
         # rate = (max_price - min_price) / min_price * 100
+        # 2021.1.16: max=3,3个连板改为2个
         if max >= 3:
             res = True
         return res
@@ -214,7 +215,7 @@ class ComputeIndex():
             res = False
         return res
 
-    # 选出前一日内跌幅在20%以上
+    # 选出14日内跌幅在20%以上
     def drop_80(self):
         res = False
         # 找到最高点
@@ -464,7 +465,7 @@ class ComputeIndex():
     def select(self):
         # 短期内停过牌的股票，暂时不考虑进入：
         if len(self.train_close)< 70 or 0 in self.train_close[:32]:
-            print(self.symbol)
+            # print(self.symbol)
             return False
         # re-define thredshold by more data
         if self.option == 'gold_cross':
@@ -479,4 +480,14 @@ class ComputeIndex():
             if self.floor_3() and self.drop_80() and self.no_drop_broken() and self.close_high() and self.no_second_up():
                 return True
         # and self.floor_2() and self.day_15() and self.no_pressure_line() and self.no_gap() and self.no_drop_floor()
+        # 其他特征筛选
+        elif self.option == 'up_limit_failed':
+            # 涨幅在9.9以上，收盘4%以下，前5天的股票 排除停牌的股票
+            if self.train_close[5] == self.train_close[6] and self.train_close[0] == self.train_close[1]:
+                return False
+            high_rate = (self.train_high[5] - self.train_close[6]) / self.train_close[6] * 100
+            rate = (self.train_close[5] - self.train_close[6]) / self.train_close[6] * 100
+            if high_rate >= 9.9 and rate <= 4:
+                print(self.symbol)
+                return True
         return False
