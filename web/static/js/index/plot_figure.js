@@ -70,6 +70,19 @@ function setOption(data0,read_name,read_symbol){
             axisPointer: {
                 type: 'cross'
             },
+            formatter: function (params) {
+                // values:[index, open,close,low,high] params[0]: 当前鼠标位置的数值，K[index, open,close,low,high], Volumn: 22000
+                var res = params[0].seriesName + ' ' + params[0].name;
+                res += '<br/> 开盘:' + params[0].value[1] + '<br/> 收盘:' + params[0].value[2];
+                res += '<br/> 当天涨幅:' + ((params[0].value[2] - params[0].value[1])/params[0].value[1]*100).toFixed(2) + '%';
+                res += '<br/> 最高:' + params[0].value[4] + '<br/>最低:' + params[0].value[3];
+                res += '<br/> 最高涨幅:' + ((params[0].value[4] - params[0].value[1])/params[0].value[1]*100).toFixed(2) + '%';
+                if(params[0].value.constructor!=Array){
+                    res = params[0].seriesName + ' ' + params[0].name;
+                    res += '<br/>成交量:' + (params[0].value)/10000 + '万';
+                }
+                return res;
+            }
         },//link K figure and volumns figure
         axisPointer: {
             link: {xAxisIndex: 'all'},

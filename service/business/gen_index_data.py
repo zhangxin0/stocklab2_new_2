@@ -121,13 +121,13 @@ class GenIndexDataService(object):
             if find_obj:
                 resp_data['buy_price'] = round(find_obj.buy_price, 2)
                 resp_data['goal_price'] = round(find_obj.buy_price * (100+sale_point)/100, 2)
-            # rps html:
-            rps_day, rps_week, rps_month = GetRps().get_rps(symbol,history=True)
-            resp_data['rps_day'] = rps_day
-            resp_data['rps_week'] = rps_week
-            resp_data['rps_month'] = rps_month
-            rps_html = f"&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):{rps_day['rps']} ({rps_day['rank']}/{rps_day['num']})&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):{rps_week['rps']}({rps_week['rank']}) &nbsp;&nbsp;&nbsp;&nbsp;RPS(M):{rps_month['rps']}({rps_month['rank']})</h2>"
-            resp_data['html'] = rps_html
+            # rps html: 静默rps
+            # rps_day, rps_week, rps_month = GetRps().get_rps(symbol,history=True)
+            # resp_data['rps_day'] = rps_day
+            # resp_data['rps_week'] = rps_week
+            # resp_data['rps_month'] = rps_month
+            # rps_html = f"&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):{rps_day['rps']} ({rps_day['rank']}/{rps_day['num']})&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):{rps_week['rps']}({rps_week['rank']}) &nbsp;&nbsp;&nbsp;&nbsp;RPS(M):{rps_month['rps']}({rps_month['rank']})</h2>"
+            # resp_data['html'] = rps_html
         except Exception as e:
             app.logger.error(e)
         return resp_data

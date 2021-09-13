@@ -6,18 +6,32 @@ var set_sale_point_ops = {
     },
     eventBind:function(){
         $("#set_sale_point").click( function(){
-           var sale_point_target = $('#set_sale_point_div input[name=set_sale_point]');
-           var sale_point = sale_point_target.val();
+           var symbol_target = $('#set_sale_point_div input[name=set_symbol]');
+           var cut_point_target = $('#set_sale_point_div input[name=set_cut_point]');
+           var profit_point_target = $('#set_sale_point_div input[name=set_profit_point]');
+           var buy_price_target = $('#set_sale_point_div input[name=set_buy_price]');
+           var symbol = symbol_target.val();
+           var cut_point = cut_point_target.val();
+           var profit_point = profit_point_target.val();
+           var buy_price = buy_price_target.val();
            var data = {
-                'sale_point': sale_point,
+                'symbol': symbol,
+                'cut_point': cut_point,
+                'profit_point': profit_point,
+                'buy_price': buy_price
            };
-           if(sale_point.length < 1){
+           if(symbol.length < 1){
                 //alert( "请输入卖点!");
-                common_ops.tip("请输入卖点！",sale_point_target);
+                common_ops.tip("请输入股票代码！",symbol_target);
+                return false;
+           }
+           if(buy_price.length < 1){
+                //alert( "请输入卖点!");
+                common_ops.tip("请输入买入价格！",buy_price_target);
                 return false;
            }
            $.ajax({
-                url: common_ops.buildUrl( "/user_defined_set_sale_point" ),
+                url: common_ops.buildUrl( "/add_notify" ),
                 async:false,
                 type:'POST',
                 data:data,
@@ -29,7 +43,7 @@ var set_sale_point_ops = {
                         window.location.replace("/");
                     }
                     if(resp.code == -1){
-                        common_ops.alert("卖点格式错误，请输入符合规范的卖点！");
+                        common_ops.alert("股票代码输入错误，请输入符合规范的代码！");
                     }
                  }
             });

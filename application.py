@@ -15,9 +15,9 @@ class Application(Flask):
             self.config.from_pyfile('config/%s_setting.py' % os.environ['ops_config'])
         db.init_app(self)
         redis_client.init_app(self)
-        from service.business.load_rps import LoadRps
-        # 请求前，先加载rds数据:
-        LoadRps().load_rps()
+        #from service.business.load_rps import LoadRps
+        # 请求前，先加载rds数据: 静默rps指标
+        # LoadRps().load_rps()
 
 db = SQLAlchemy()
 redis_client = FlaskRedis()

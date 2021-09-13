@@ -419,19 +419,19 @@ def search():
             data0.append(values)
         user_info = UserInfo.query.filter_by(user_id=g.current_user.uid).first()
         if user_info:
-            sale_point = user_info.sale_point or 4
+            sale_point = user_info.sale_point or 5
         else:
-            sale_point = 4
+            sale_point = 5
         resp['data0'] = data0
         resp['name'] = data[0].name
         resp['symbol'] = data[0].symbol
         resp['sale_point'] = sale_point
         # rps html:
-        rps_day, rps_week, rps_month = GetRps().get_rps(symbol,history=True)
-        # rps_html = f"&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):{rps_day['rps']} ({rps_day['rank']}/{rps_day['num']})&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):{rps_week['rps']}({rps_week['rank']}) &nbsp;&nbsp;&nbsp;&nbsp;RPS(M):{rps_month['rps']}({rps_month['rank']})</h2>"
-        resp['rps_day'] = rps_day
-        resp['rps_week'] = rps_week
-        resp['rps_month'] = rps_month
+        # rps_day, rps_week, rps_month = GetRps().get_rps(symbol,history=True)
+        ## rps_html = f"&nbsp;&nbsp;&nbsp;&nbsp;<h2 id=\"current_rps\"> RPS(D):{rps_day['rps']} ({rps_day['rank']}/{rps_day['num']})&nbsp;&nbsp;&nbsp;&nbsp;RPS(W):{rps_week['rps']}({rps_week['rank']}) &nbsp;&nbsp;&nbsp;&nbsp;RPS(M):{rps_month['rps']}({rps_month['rank']})</h2>"
+        # resp['rps_day'] = rps_day
+        # resp['rps_week'] = rps_week
+        # resp['rps_month'] = rps_month
     return jsonify(resp)
 
 
@@ -609,9 +609,9 @@ def get_strategy():
         # 每一只股set sale_point，否则延续上一次修改的sale_point
         user_info = UserInfo.query.filter_by(user_id=g.current_user.uid).first()
         if user_info:
-            sale_point = user_info.sale_point or 4
+            sale_point = user_info.sale_point or 5
         else:
-            sale_point = 4
+            sale_point = 5
         symbol = element.hold_stock
         if symbol[-1] == 'Z':
             symbol_url = 'sz' + symbol[0:6]
@@ -731,6 +731,36 @@ def message():
         db.session.commit()
     return resp
 
+@route_index.route('/add_notify', methods=['GET', 'POST'])
+@restful
+def add_notify():
+    from service.notify.NotifyService import NotifyService
+    from dto.notify.notify_dto import NotifyDto
+    resp = {'code': 200, 'msg': 'success', 'data': {}}
+    req = request.values
+    symbol = req['symbol']
+    # 添加后缀:
+    symbol = symbol[0:6]
+    if symbol[0] == '6':
+        symbol += '.SS'
+    else:
+        symbol += '.SZ'
+    stock_list = StockList.query.all()
+    symbols = []
+    for element in stock_list:
+        symbols.append(element.symbol)
+    if symbol not in symbols:
+        resp['code'] = -1
+    dto = NotifyDto()
+    dto.time = datetime.datetime.now()
+    dto.symbol = symbol
+    dto.cut_point = req['cut_point']
+    dto.profit_point = req['profit_point']
+    dto.buy_price = req['buy_price']
+    dto.status = 1 # valid
+    dto.user_id = g.current_user.uid
+    sale_point_notify = NotifyService().save_sale_point(dto)
+    return resp
 
 @route_index.route('/get_history', methods=['GET'])
 @restful
